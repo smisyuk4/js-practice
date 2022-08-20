@@ -372,28 +372,31 @@
 
 
 // ========= #20
-const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-function calculateTotalPrice(productName) {
-    let sum = 0;
+// function calculateTotalPrice(productName) {
+//     let sum = 0;
 
-    for (const product of products){
-        if (product.hasOwnProperty(productName)){
-            return console.log(sum = product.price * product.quantity);
-        }
-    }
+//     for (const product of products) {
+//         if (product.name === productName){
+//             sum = product.price * product.quantity;
+//         }
+//     }
 
-    return console.log(sum);
-}
+//     return console.log(sum);
+// }
 
 
-calculateTotalPrice("Blaster");
-calculateTotalPrice("Radar");
-calculateTotalPrice("Droid");
-calculateTotalPrice("Grip");
-calculateTotalPrice("Scanner");
+// calculateTotalPrice("Blaster");
+// calculateTotalPrice("Radar");
+// calculateTotalPrice("Droid");
+// calculateTotalPrice("Grip");
+// calculateTotalPrice("Scanner");
+
+
+// ========= #21
