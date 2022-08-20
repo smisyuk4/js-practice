@@ -1,4 +1,5 @@
 "use strict";
+// массиви та функції
 // ========= #1
 // function checkAge(age) {
 //   if (age >= 18) { // Change this line
