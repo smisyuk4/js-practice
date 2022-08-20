@@ -1,5 +1,5 @@
 "use strict";
-// обєкти, операції rest та spread
+// обєкти, операції rest та spread.
 // ========= #1
 // const apartment = {
 //     imgUrl: "https://via.placeholder.com/640x480",
