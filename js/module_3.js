@@ -194,4 +194,206 @@
 // console.log(values);
 
 
+// гарний відос про об'єкт та протототип
+// https://www.youtube.com/watch?v=zWjT_2hFkMw
 // ========= #11
+// const keys = [];
+// const values = [];
+// const advert = {
+//     service: "apt",
+// };
+// const apartment = Object.create(advert);
+// apartment.descr = "Spacious apartment in the city center";
+// apartment.rating = 4;
+// apartment.price = 2153;
+
+// for (const key in apartment) {
+//     if (apartment.hasOwnProperty(key)){
+//         keys.push(key);
+//         values.push(apartment[key]);
+//     }
+// }
+
+// console.log(keys);
+// console.log(values);
+
+
+// ========= #12
+// function countProps(object) {
+//     let propCount = 0;
+//     for (const key in object){
+//         if(object.hasOwnProperty(key)){
+//         propCount += 1;
+//         }
+//     }
+//     return console.log(propCount);
+// }
+
+// countProps({});
+// countProps({ name: "Mango", age: 2 });
+// countProps({ mail: "poly@mail.com", isOnline: true, score: 500 });
+
+
+// ========= #13
+// const apartment = {
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+// };
+// const values = [];
+// const keys = Object.keys(apartment);
+// console.log(keys);
+
+// for (const key of keys){
+//     values.push(apartment[key]);
+// }
+
+// console.log(values);
+
+
+// ========= #14
+// function countProps(object) {
+//     let propCount = 0;
+//     const keys = Object.keys(object);
+    
+//     for (const key of keys) {
+//         propCount += 1;
+//     }
+
+//     return console.log(propCount);
+// }
+
+// countProps({});
+// countProps({ name: "Mango", age: 2 });
+// countProps({ mail: "poly@mail.com", isOnline: true, score: 500 });
+
+
+// ========= #15
+// const apartment = {
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+// };
+
+// const keys = Object.keys(apartment);
+// const values = Object.values(apartment);
+
+// console.log(keys);
+// console.log(values);
+
+
+// ========= #16
+// function countTotalSalary(salaries) {
+//     let totalSalary = 0;
+//     const values = Object.values(salaries);
+
+//     for (const value of values){
+//         totalSalary += value;
+//         }
+        
+//     return console.log(totalSalary);
+// }
+
+// countTotalSalary({});
+// countTotalSalary({ mango: 100, poly: 150, alfred: 80 });
+// countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 });
+
+
+// ========= #17
+// const colors = [
+//     { hex: "#f44336", rgb: "244,67,54" },
+//     { hex: "#2196f3", rgb: "33,150,243" },
+//     { hex: "#4caf50", rgb: "76,175,80" },
+//     { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+
+// for (const color of colors){
+//     hexColors.push(color.hex);
+//     rgbColors.push(color.rgb);
+// }
+
+// console.log(hexColors);
+// console.log(rgbColors);
+
+
+// ========= #18
+// const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+//     for (const key of products){
+//         if(key.name === productName){
+//         return console.log(key.price);
+//         }
+//     }
+
+//     return console.log(null);
+// }
+
+// getProductPrice("Radar");
+// getProductPrice("Grip");
+// getProductPrice("Scanner");
+// getProductPrice("Droid");
+// getProductPrice("Engine");
+
+
+// ========= #19
+// const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getAllPropValues(propName) {
+//     let valuesArr = [];
+    
+//     for (const product of products) {
+    //  if (propName in product){ - аналогичное условие ниже
+//         if (product.hasOwnProperty(propName)){
+//             valuesArr.push(product[propName]);
+//         }
+//     }
+
+//     return console.log(valuesArr);
+// }
+
+// getAllPropValues("name");
+// getAllPropValues("quantity");
+// getAllPropValues("price");
+// getAllPropValues("category");
+
+
+// ========= #20
+const products = [
+    { name: "Radar", price: 1300, quantity: 4 },
+    { name: "Scanner", price: 2700, quantity: 3 },
+    { name: "Droid", price: 400, quantity: 7 },
+    { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function calculateTotalPrice(productName) {
+    let sum = 0;
+
+    for (const product of products){
+        if (product.hasOwnProperty(productName)){
+            return console.log(sum = product.price * product.quantity);
+        }
+    }
+
+    return console.log(sum);
+}
+
+
+calculateTotalPrice("Blaster");
+calculateTotalPrice("Radar");
+calculateTotalPrice("Droid");
+calculateTotalPrice("Grip");
+calculateTotalPrice("Scanner");
