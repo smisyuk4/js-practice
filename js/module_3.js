@@ -511,3 +511,242 @@
 
 
 // ========= #26
+// function calculateMeanTemperature(forecast) {
+//     const {
+//         today:{
+//             low: todayLow,
+//             high: todayHigh,
+//         },
+//         tomorrow: {
+//             low: tomorrowLow,
+//             high: tomorrowHigh,
+//         }
+//     } = forecast;
+    
+//     return console.log((todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4);
+// }
+
+// calculateMeanTemperature({ today: { low: 28, high: 32 }, tomorrow: { low: 25, high: 29 } });
+// calculateMeanTemperature({ today: { low: 37, high: 40 }, tomorrow: { low: 33, high: 38 } });
+
+
+// ========= #27
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+
+// const bestScore = Math.max(... scores);
+// const worstScore = Math.min(... scores);
+
+// console.log(bestScore);
+// console.log(worstScore);
+
+
+// ========= #28
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+
+// const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
+
+// console.log(allScores);
+// console.log(bestScore);
+// console.log(worstScore);
+
+
+// ========= #29
+// const defaultSettings = {
+//     theme: "light",
+//     public: true,
+//     withPassword: false,
+//     minNumberOfQuestions: 10,
+//     timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//     public: false,
+//     withPassword: true,
+//     timePerQuestion: 30,
+// };
+
+// const finalSettings = {...defaultSettings, ...overrideSettings};
+
+// console.log(finalSettings);
+
+
+// ========= #30
+// function makeTask(data) {
+//     const completed = false;
+//     const category = "General";
+//     const priority = "Normal";
+    
+//     const newData = {
+//         category,
+//         priority,
+//         completed,
+//     }
+
+//     return console.log({...newData, ...data});
+// }
+
+// makeTask({});
+// makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" });
+// makeTask({ category: "Finance", text: "Take interest" });
+// makeTask({ priority: "Low", text: "Choose shampoo" });
+// makeTask({ text: "Buy bread" });
+
+
+// ========= #31
+// function add(...args) {
+//     let sum = 0;
+//     for (const item of args){
+//         sum += item;
+//     }
+    
+//     return console.log(sum);
+// }
+
+// add(15, 27);
+// add(12, 4, 11, 48);
+// add(32, 6, 13, 19, 8);
+// add(74, 11, 62, 46, 12, 36);
+
+
+// ========= #32
+// function addOverNum(...args) {
+//     let total = 0;
+//     const num = args[0];
+
+//     for (const arg of args) {
+//         if (num < arg){
+//         total += arg;
+//         }
+//     }
+
+//     return console.log(total);
+// }
+
+// addOverNum(50, 15, 27);
+// addOverNum(10, 12, 4, 11, 48, 10, 8);
+// addOverNum(15, 32, 6, 13, 19, 8);
+// addOverNum(20, 74, 11, 62, 46, 12, 36);
+
+
+// ========= #33
+// function findMatches(arr, ...args) {
+//     const matches = [];
+
+//     for (const arg of args){
+//         if (arr.includes(arg)){
+//             matches.push(arg);
+//         }
+//     }
+
+//     return console.log(matches);
+// }
+
+// findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7);
+// findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2);
+// findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41);
+// findMatches([63, 11, 8, 29], 4, 7, 16);
+
+
+// ========= #34
+// const bookShelf = {
+//     books: ["The last kingdom", "The guardian of dreams"],
+//     getBooks() {
+//         return console.log("Returning all books");
+//     },
+//     addBook(bookName) {
+//         return console.log(`Adding book ${bookName}`);
+//     },
+//     removeBook(bookName){
+//         return console.log(`Deleting book ${bookName}`);
+//     },
+//     updateBook(oldName, newName){
+//         return console.log(`Updating book ${oldName} to ${newName}`);
+//     }
+// };
+
+// bookShelf.getBooks();
+// bookShelf.addBook("Haze");
+// bookShelf.removeBook("Red sunset");
+// bookShelf.updateBook("Sands of dune", "Dune");
+
+
+// ========= #35
+// const bookShelf = {
+//     books: ["The last kingdom", "Haze", "The guardian of dreams"],
+    
+//     updateBook(oldName, newName) {
+//         const index = this.books.indexOf(oldName);
+        
+//         this.books.splice(index, 1, newName);
+//     },
+// };
+
+// bookShelf.updateBook("Haze", "Dungeon chronicles");
+// bookShelf.updateBook("The last kingdom", "Dune");
+
+
+// console.log(bookShelf.books);
+
+
+// ========= #37
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     getPotions(){
+//         return console.log(this.potions);
+//     },
+// };
+
+// atTheOldToad.getPotions();
+
+
+// ========= #38
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     addPotion(potionName) {
+//         this.potions.push(potionName);
+//     },
+// };
+
+// atTheOldToad.addPotion("Invisibility");
+// atTheOldToad.addPotion("Power potion");
+
+// console.log(atTheOldToad.potions);
+
+
+// ========= #39
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     removePotion(potionName) {
+//         const index = this.potions.indexOf(potionName);
+
+//         this.potions.splice(index, 1)
+//     },
+// };
+
+// atTheOldToad.removePotion("Dragon breath");
+// atTheOldToad.removePotion("Speed potion");
+
+// console.log(atTheOldToad.potions);
+
+
+// ========= #40
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     updatePotionName(oldName, newName) {
+//         const index = this.potions.indexOf(oldName);
+
+//         this.potions.splice(index, 1, newName);
+//     },
+// };
+
+
+// atTheOldToad.updatePotionName("Dragon breath", "Polymorth");
+// atTheOldToad.updatePotionName("Stone skin", "Invisibility");
+
+// console.log(atTheOldToad.potions);
+
+
+// ========= #41
