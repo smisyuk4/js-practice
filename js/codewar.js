@@ -298,8 +298,8 @@
 
 
 // ========= #10
-// В этой ката ваша задача — реализовать расширенную версию 
-// знаменитой игры «камень - ножницы - бумага». 
+// В этой ката ваша задача — реализовать расширенную версию
+// знаменитой игры «камень - ножницы - бумага».
 // Правила следующие:
 // Ножницы режут бумагу
 // Бумажные обложки Рок
@@ -316,7 +316,7 @@
 // верните результат игрока как «Игрок 1 выиграл!», «Игрок 2 выиграл!» или «Ничья!».
 
 // function rpsls(pl1,pl2){
-// //"rock", "paper", "scissors", "lizard", "spock".    
+// //"rock", "paper", "scissors", "lizard", "spock".
     
 //     if (pl1 === pl2) {
 //         return console.log("Draw!");
@@ -403,7 +403,7 @@
 //     }
 // }
 
-// rpsls('paper', 'paper');// 'Draw'
+// rpsls('paper', 'rock');// 'Draw'
 // rpsls('spock', 'rock');// 'Player 1 Won!!'
 // rpsls('scissors', 'lizard');// 'Player 1 Won!!'
 // rpsls('rock', 'lizard');// 'Player 1 Won!!'
@@ -413,3 +413,66 @@
 // rpsls('scissors', 'spock');// 'Player 2 Won!!'
 // rpsls('paper', 'scissors');// 'Player 2 Won!!'
 
+
+// ========= #11
+// Завершите решение так, чтобы оно возвращало true,
+// если первый переданный аргумент(строка) заканчивается вторым аргументом(тоже строкой).
+// Пример:
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+
+//моё решение
+// function solution(str, ending){
+//     if (ending === '') {
+//         return console.log(true);
+//     }
+
+//     if (str.slice(-(ending.length)) === ending.slice(-(ending.length))) {
+//         return console.log(true);
+//     }
+
+//     return console.log(false);
+// }
+
+// //чужое решение
+// function solution(str, ending){
+//     return console.log(str.endsWith(ending));
+// }
+
+// solution('abcde', 'cde');
+// solution('abcde', 'abc');
+// solution('sumo', 'omo');
+// solution('abc', '')
+
+// ========= #12
+// Учитывая массив единиц и нулей,
+// преобразуйте эквивалентное двоичное значение в целое число.
+// Например: [0, 0, 0, 1] обрабатывается как 0001,
+// что является двоичным представлением 1.
+
+// https://ru.wikihow.com/%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C-%D0%B8%D0%B7-%D0%B4%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D0%BE%D0%B9-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B2-%D0%B4%D0%B5%D1%81%D1%8F%D1%82%D0%B8%D1%87%D0%BD%D1%83%D1%8E
+//https://www.youtube.com/watch?v=jeSErJeu_7Q&ab_channel=%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0%D0%9F%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B0
+//https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+
+
+//моё решение
+// const binaryArrayToNumber = arr => {
+//     let countArr = arr.length-1;
+//     let num = 0;
+
+//     for (let i = 0; i < arr.length; i += 1){
+//         num += arr[i] * (2 ** countArr);
+//         countArr -= 1;
+//     }
+
+//     console.log(num);
+// };
+
+//чужое решение
+// const binaryArrayToNumber = arr => console.log(parseInt(arr.join(''), 2));
+
+// binaryArrayToNumber([1,1,1,0,1]) //29
+// binaryArrayToNumber([0,0,0,1])// 1
+// binaryArrayToNumber([0,0,1,0])// 2
+// binaryArrayToNumber([1,1,1,1])// 15
+// binaryArrayToNumber([0,1,1,0])// 6
