@@ -177,3 +177,239 @@
 
 
 // ========= #6
+// Преобразовать число в перевернутый массив цифр
+// Учитывая случайное неотрицательное число,
+// вы должны вернуть цифры этого числа в массиве в обратном порядке.
+// Пример (ввод => вывод):
+// 348597 => [7,9,5,8,4,3]
+// 0 => [0]
+
+//мой код
+// function digitize(n) {
+//     const numString = n.toString()
+//     const arrNum = numString.split('');
+
+//     let arrNumReverse = [];
+
+//         for (let i = arrNum.length-1; i >= 0; i -= 1) {
+//             arrNumReverse.push(Number(arrNum[i]));
+//         }
+
+//     return console.log(arrNumReverse);
+// }
+
+//чужой код
+// function digitize(n) {
+//     return console.log(String(n).split('').map(Number).reverse());
+// }
+
+// digitize(735231);
+// digitize(0);
+
+
+// ========= #7
+// Нам нужна функция, которая может преобразовать число (целое число) в строку.
+// Примеры (ввод --> вывод):
+// 123  --> "123"
+// 999  --> "999"
+// -100 --> "-100"
+
+//мой вариант
+// function numberToString(num) {
+//     return console.log(String(num));
+// }
+
+//чужой вариант
+// function numberToString(num) {
+//     return `${num}`; //№1
+//     return num + ''; //№2
+// }
+
+// numberToString(67);
+// numberToString(58789);
+// numberToString(0);
+
+
+// ========= #8
+// Нам нужна функция, которая может преобразовать строку в число.
+// Какие способы достижения этого вы знаете ?
+// Примечание.Не беспокойтесь, все входные данные будут строками,
+// а каждая строка является абсолютно допустимым представлением целого числа.
+// Примеры (ввод --> вывод):
+// "1234" --> 1234
+// "605"  --> 605
+// "1405" --> 1405
+// "-7" --> -7
+
+//мой вариант
+// const stringToNumber = function(str){
+//     return console.log(Number(str));
+// }
+
+//чужой вариант
+// const stringToNumber = function(str){
+    // return console.log(parseInt(str)); //#1
+    // return console.log(+str); //#2
+// }
+
+// stringToNumber("1234");
+// stringToNumber("605");
+// stringToNumber("1405");
+// stringToNumber("-7");
+
+
+// ========= #9 (решение с прототипом решил Рустем. сам решил с обычной функцией)
+// Строка в верхнем регистре?
+// Создайте метод, чтобы увидеть, является ли строка ВСЕМИ ЗАГЛАВНЫМИ.
+// Примеры (ввод --> вывод):
+// "c" -> False
+// "C" -> True
+// "hello I AM DONALD" -> False
+// "HELLO I AM DONALD" -> True
+// "ACSKLDFJSgSKLDFJSKLDFJ" -> False
+// "ACSKLDFJSGSKLDFJSKLDFJ" -> True
+
+// В этом Ката говорится, что строка написана ВСЕ ЗАГЛАВНЫМИ буквами,
+// если она не содержит строчных букв, поэтому любая строка,
+// вообще не содержащая букв,
+// тривиально считается написанной ВСЕМИ ЗАГЛАВНЫМИ БУКВАМИ.
+
+// String.prototype.isUpperCase = function() {
+//     return console.log(String(this) === this.toUpperCase());
+// }
+
+// 'hello I AM DONALD'.isUpperCase();
+// 'C'.isUpperCase();
+// 'hello I AM DONALD'.isUpperCase();
+// 'HELLO I AM DONALD'.isUpperCase();
+// 'ACSKLDFJSgSKLDFJSKLDFJ'.isUpperCase();
+// 'ACSKLDFJSGSKLDFJSKLDFJ'.isUpperCase();
+// 'Hello World'.isUpperCase();
+// 'hello world'.isUpperCase();
+// 'Hello world'.isUpperCase();
+// 'hello World'.isUpperCase();
+// 'HELLO WORLD'.isUpperCase();
+// 'Bob walks his dog every day.'.isUpperCase();
+// 'BOB walks his dog every day.'.isUpperCase();
+// 'BOB WALKS HIS DOG EVERY DAY.'.isUpperCase();
+// 'BOB WALKs HIS DOG EVERY DAY.'.isUpperCase();
+// '#lovewins'.isUpperCase();
+// '#Lovewins'.isUpperCase();
+
+
+// ========= #10
+// В этой ката ваша задача — реализовать расширенную версию 
+// знаменитой игры «камень - ножницы - бумага». 
+// Правила следующие:
+// Ножницы режут бумагу
+// Бумажные обложки Рок
+// Камень давит ящерицу
+// Ящерица отравляет Спока
+// Спок разбивает ножницы
+// Ножницы обезглавливают ящерицу
+// Ящерица ест бумагу
+// Бумага опровергает Спока
+// Спок испаряет Рок
+// Камень давит ножницы
+// Задача:
+// Учитывая два значения из приведенной выше игры,
+// верните результат игрока как «Игрок 1 выиграл!», «Игрок 2 выиграл!» или «Ничья!».
+
+// function rpsls(pl1,pl2){
+// //"rock", "paper", "scissors", "lizard", "spock".    
+    
+//     if (pl1 === pl2) {
+//         return console.log("Draw!");
+//     }
+
+//     //rock
+//     if ((pl1 === "rock" && pl2 === "scissors") ||
+//         (pl1 === "rock" && pl2 === "lizard")){
+//         return console.log("Player 1 Won!");
+//     }
+
+//     if ((pl1 === "rock" && pl2 === "spock") ||
+//         (pl1 === "rock" && pl2 === "paper")){
+//         return console.log("Player 2 Won!");
+//     }
+
+//     if ((pl2 === "rock" && pl1 === "scissors") ||
+//         (pl2 === "rock" && pl1 === "lizard")) {
+//         return console.log("Player 2 Won!");
+//     }
+
+//     //lizard
+//     if ((pl1 === "lizard" && pl2 === "spock") ||
+//         (pl1 === "lizard" && pl2 === "paper")){
+//         return console.log("Player 1 Won!");
+//     }
+
+//     if ((pl1 === "lizard" && pl2 === "scissors") ||
+//         (pl1 === "lizard" && pl2 === "rock")){
+//         return console.log("Player 2 Won!");
+//     }
+
+//     if ((pl2 === "lizard" && pl1 === "spock") ||
+//         (pl2 === "lizard" && pl1 === "paper")) {
+//         return console.log("Player 2 Won!");
+//     }
+
+//     //spock
+//     if ((pl1 === "spock" && pl2 === "scissors") ||
+//         (pl1 === "spock" && pl2 === "rock")){
+//         return console.log("Player 1 Won!");
+//     }
+
+//     if ((pl1 === "spock" && pl2 === "paper") ||
+//         (pl1 === "spock" && pl2 === "lizard")){
+//         return console.log("Player 2 Won!");
+//     }
+
+//     if ((pl2 === "spock" && pl1 === "scissors") ||
+//         (pl2 === "spock" && pl1 === "rock")) {
+//         return console.log("Player 2 Won!");
+//     }
+
+//     //scissors
+//     if ((pl1 === "scissors" && pl2 === "lizard") ||
+//         (pl1 === "scissors" && pl2 === "paper")){
+//         return console.log("Player 1 Won!");
+//     }
+
+//     if ((pl1 === "scissors" && pl2 === "spock") ||
+//         (pl1 === "scissors" && pl2 === "rock")){
+//         return console.log("Player 2 Won!");
+//     }
+
+//     if ((pl2 === "scissors" && pl1 === "lizard") ||
+//         (pl2 === "scissors" && pl1 === "paper")) {
+//         return console.log("Player 2 Won!");
+//     }
+
+//     //paper
+//     if ((pl1 === "paper" && pl2 === "rock") ||
+//         (pl1 === "paper" && pl2 === "spock")){
+//         return console.log("Player 1 Won!");
+//     }
+
+//     if ((pl1 === "paper" && pl2 === "lizard") ||
+//         (pl1 === "paper" && pl2 === "scissors")){
+//         return console.log("Player 2 Won!");
+//     }
+
+//     if ((pl2 === "paper" && pl1 === "rock") ||
+//         (pl2 === "paper" && pl1 === "spock")) {
+//         return console.log("Player 2 Won!");
+//     }
+// }
+
+// rpsls('paper', 'paper');// 'Draw'
+// rpsls('spock', 'rock');// 'Player 1 Won!!'
+// rpsls('scissors', 'lizard');// 'Player 1 Won!!'
+// rpsls('rock', 'lizard');// 'Player 1 Won!!'
+// rpsls('rock','spock');// 'Player 2 Won!!'
+// rpsls('spock', 'lizard');// 'Player 2 Won!!'
+// rpsls('paper', 'lizard');// 'Player 2 Won!!'
+// rpsls('scissors', 'spock');// 'Player 2 Won!!'
+// rpsls('paper', 'scissors');// 'Player 2 Won!!'
+
