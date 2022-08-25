@@ -451,8 +451,8 @@
 // что является двоичным представлением 1.
 
 // https://ru.wikihow.com/%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C-%D0%B8%D0%B7-%D0%B4%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D0%BE%D0%B9-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B2-%D0%B4%D0%B5%D1%81%D1%8F%D1%82%D0%B8%D1%87%D0%BD%D1%83%D1%8E
-//https://www.youtube.com/watch?v=jeSErJeu_7Q&ab_channel=%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0%D0%9F%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B0
-//https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+// https://www.youtube.com/watch?v=jeSErJeu_7Q&ab_channel=%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0%D0%9F%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B0
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseInt
 
 
 //моё решение
@@ -476,3 +476,123 @@
 // binaryArrayToNumber([0,0,1,0])// 2
 // binaryArrayToNumber([1,1,1,1])// 15
 // binaryArrayToNumber([0,1,1,0])// 6
+
+
+// ========= #13
+// Напишите функцию, которая вычисляет среднее значение чисел в заданном списке.
+// Примечание. Пустые массивы должны возвращать 0.
+
+// function find_average(array) {
+//     let sumNum = 0;
+
+//     if (array.length !== 0) {
+//         for (const item of array) {
+//             sumNum += item
+//         }
+//     } else {
+//         return console.log(0);
+//     }
+
+//     return console.log(sumNum / array.length);
+// }
+
+//чужой вариант
+// function find_average(array) {
+//     return console.log((Math.min(...array) + Math.max(...array)) / 2);
+// }
+
+// find_average([1, 1, 1]); // 1
+// find_average([1, 2, 3]); // 2
+// find_average([1, 2, 3, 4]); //2.5
+
+
+// ========= #14
+// Просто удалите пробелы из строки, затем верните результирующую строку.
+
+// function noSpace(x) {
+    //return console.log(String(x).replaceAll(' ', '')); //#1 вариант
+
+    // return console.log(String(x).split(' ').join('')); //#2 вариант
+// }
+
+// noSpace('8 j 8   mBliB8g  imjB8B8  jl  B');
+// noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd');
+// noSpace('8aaaaa dddd r     ');
+
+
+// ========= #15
+// Дан список целых чисел, определить, является ли сумма его элементов четной или нечетной.
+// Дайте ответ в виде строки, соответствующей «нечетному» или «четному».
+// Если входной массив пуст, рассматривайте его как: [0] (массив с нулем).
+// пример:
+// Input: [0]
+// Output: "even"
+
+// Input: [0, 1, 4]
+// Output: "odd"
+
+// Input: [0, -1, -5]
+// Output: "even"
+
+// function oddOrEven(array) {
+//     if (array.length === 0) {
+//         return console.log("even");
+//     }
+
+//     let sum = 0;
+
+//     for (const item of array) {
+//         sum += item;
+//     }
+
+//     if (sum % 2 !== 0) {
+//         return console.log("odd");
+//     }
+
+//     return console.log("even");
+// }
+
+// oddOrEven([0, -1, -5]);// 'even'
+// oddOrEven([0, -1, -3]);// 'even'
+// oddOrEven([-1023, 1, -2]);// 'even'
+
+// oddOrEven([0, 1, 2]);// 'odd'
+// oddOrEven([0, 1, 4]);// 'odd'
+// oddOrEven([1023, 1, 3]);// 'odd'
+
+// oddOrEven([0, -1, 2]);// 'odd'
+// oddOrEven([0, 1, -4]);// 'odd'
+// oddOrEven([-1023, -1, 3]);// 'odd'
+
+
+// ========= #16
+// Завершите функцию, которая принимает строковый параметр
+// и переворачивает каждое слово в строке.
+// Все пробелы в строке должны быть сохранены.
+// Пример:
+// "This is an example!" ==> "sihT si na !elpmaxe"
+// "double  spaces"      ==> "elbuod  secaps"
+
+// моё решение
+// function reverseWords(str) {
+//     const wordArr = String(str).split(' ')
+
+//     let reversedArr = []
+
+//     for (const word of wordArr) {
+//         reversedArr.push(word.split('').reverse().join(''));
+//     }
+
+//     return console.log(reversedArr.join(' '));
+// }
+
+//чужое решение
+// function reverseWords(str) {
+//     return console.log(str.split("").reverse().join("").split(" ").reverse().join(" "));
+// }
+
+// reverseWords('The quick brown fox jumps over the lazy dog.');// 'ehT kciuq nworb xof spmuj revo eht yzal .god'
+// reverseWords('apple');// 'elppa'
+// reverseWords('a b c d');// 'a b c d'
+// reverseWords('double  spaced  words');// 'elbuod  decaps  sdrow'
+
