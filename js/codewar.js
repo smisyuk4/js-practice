@@ -596,3 +596,89 @@
 // reverseWords('a b c d');// 'a b c d'
 // reverseWords('double  spaced  words');// 'elbuod  decaps  sdrow'
 
+
+// ========= #17
+// Завершите метод, который принимает логическое значение
+// и возвращает строку «Да» для значения «истина»
+// или строку «Нет» для значения «ложь».
+
+// function boolToWord(bool) {
+//     return console.log(bool === true ? 'Yes' : 'No');
+// }
+
+// boolToWord(true);
+// boolToWord(false);
+
+
+// ========= #18
+// Джейден Смит, сын Уилла Смита, является звездой таких фильмов,
+// как «Каратэ - пацан» (2010) и «После Земли» (2013).
+// Джейден также известен своей философией, которую он распространяет через Twitter.
+// Когда он пишет в Твиттере, он известен тем,
+// что почти всегда пишет каждое слово с большой буквы.
+// Для простоты вам придется писать каждое слово с заглавной буквы.
+// Посмотрите, какими должны быть сокращения в приведенном ниже примере.
+
+// Ваша задача состоит в том, чтобы преобразовать строки в то,
+// как они были бы написаны Джейденом Смитом.
+// Строки являются настоящими цитатами Джейдена Смита,
+// но они не написаны с заглавной буквы так,
+// как он их изначально напечатал.
+        
+// Пример:
+// Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+// Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+// String.prototype.toJadenCase = function () {
+//     const arrWords = this.toLowerCase().split(' ');
+//     let capitalizeWords = [];
+
+//     for (const word of arrWords) {
+//         capitalizeWords.push(word.slice(0, 1).toUpperCase() + word.slice(1));
+//     }
+    
+//     return console.log(capitalizeWords.join(' '))
+// };
+
+// "How can mirrors be real if our eyes aren't real".toJadenCase();
+
+
+// ========= #19
+// Изограмма — это слово, в котором нет повторяющихся букв,
+// последовательных или непоследовательных.
+// Реализуйте функцию, определяющую, является ли строка,
+// содержащая только буквы, изограммой.
+// Предположим, что пустая строка является изограммой.
+// Игнорировать регистр букв.
+// Пример:
+// "Dermatoglyphics" --> true
+// "aba" --> false
+// "moOse" --> false (ignore letter case)
+
+// function isIsogram(str){
+//     const arrString = str.toLowerCase().split('');
+//     const arrLength = arrString.length;
+
+//     for (let i = 0; i < arrLength; i += 1){
+//         const controlLetter = arrString[i];
+
+//         for (let b = i + 1; b < arrLength; b += 1){
+//             const checkLetter = arrString[b];
+
+//             if (controlLetter === checkLetter) {
+//                 return console.log(false);
+//             }
+//         }       
+//     }
+
+//     return console.log(true);
+// }
+
+// isIsogram("Dermatoglyphics");// true
+// isIsogram("isogram");// true
+// isIsogram("aba");// false
+// isIsogram("moOse");// false
+// isIsogram("isIsogram");// false
+// isIsogram("");// true
+// isIsogram("abcdefghijklmnopqrstuvwxyzL"); // false
+
