@@ -668,7 +668,7 @@
 //             if (controlLetter === checkLetter) {
 //                 return console.log(false);
 //             }
-//         }       
+//         }
 //     }
 
 //     return console.log(true);
@@ -681,4 +681,41 @@
 // isIsogram("isIsogram");// false
 // isIsogram("");// true
 // isIsogram("abcdefghijklmnopqrstuvwxyzL"); // false
+
+
+// ========= #20
+// Возможно, вы знаете несколько довольно больших идеальных квадратов.
+// Но как насчет СЛЕДУЮЩЕГО?
+// Завершите метод findNextSquare,
+// который находит следующий целочисленный идеальный квадрат после квадрата,
+// переданного в качестве параметра.
+// Напомним, что целочисленный совершенный квадрат
+// — это целое число n, такое что sqrt(n) также является целым числом.
+
+// Если параметр сам по себе не является идеальным квадратом,
+// то следует вернуть -1.
+// Вы можете предположить, что параметр неотрицательный.
+
+// Пример:
+// 121 --> 144 (11 и 12 в квадратах)
+// 625 --> 676 (25 и 26 в квадратах)
+// 114 --> -1 since 114 is not a perfect square
+
+// function findNextSquare(sq) {
+//     const currentNum = Math.sqrt(sq);
+
+//     if (Number.isInteger(currentNum)) {
+//         return console.log((currentNum + 1) ** 2);
+//     } 
+    
+//     return console.log(-1);
+// }
+
+// findNextSquare(121); // 144
+// findNextSquare(625); // 676
+// findNextSquare(319225); // 320356
+// findNextSquare(15241383936); // 15241630849
+// findNextSquare(155); // -1
+// findNextSquare(342786627); // -1
+
 
