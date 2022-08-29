@@ -315,6 +315,7 @@
 // Учитывая два значения из приведенной выше игры,
 // верните результат игрока как «Игрок 1 выиграл!», «Игрок 2 выиграл!» или «Ничья!».
 
+//моё решение
 // function rpsls(pl1,pl2){
 // //"rock", "paper", "scissors", "lizard", "spock".
     
@@ -401,6 +402,26 @@
 //         (pl2 === "paper" && pl1 === "spock")) {
 //         return console.log("Player 2 Won!");
 //     }
+// }
+
+//чужое решение
+// function rpsls(p1,p2){
+//     let wins = {
+//         scissors:['paper','lizard'],
+//         paper:['rock','spock'],
+//         rock:['lizard','scissors'],
+//         lizard:['spock','paper'],
+//         spock:['scissors','rock']
+//     }
+    
+//     let player1 = wins[p1].includes(p2)
+//     let player2 = wins[p2].includes(p1)
+    
+//     if (!player1 && !player2) {
+//         return console.log('Draw!');    
+//     } 
+
+//     return console.log(`Player ${player1 ? '1' : '2'} Won!`);
 // }
 
 // rpsls('paper', 'rock');// 'Draw'

@@ -216,3 +216,167 @@
 
 
 // ========= #28
+// Напишите функцию, которая преобразует входную строку в верхний регистр.
+
+// function makeUpperCase(str) {
+//     return console.log(String(str).toUpperCase());
+// }
+
+// makeUpperCase("hello"); //"HELLO"
+
+// ========= #29
+// Учитывая целое число, определите, является ли оно квадратным числом.
+
+// В математике квадратное число или идеальный квадрат — это целое число,
+// являющееся квадратом целого числа; другими словами,
+// это произведение некоторого целого числа на самого себя.
+
+// В тестах всегда будет использоваться некоторое целое число,
+// так что не беспокойтесь об этом в языках с динамической типизацией.
+
+// Примеры:
+// -1  =>  false
+//  0  =>  true
+//  3  =>  false
+//  4  =>  true
+// 25  =>  true
+// 26  =>  false
+
+//моё решение
+// var isSquare = function(n){
+//     if (n >= 0 && Number.isInteger(Math.sqrt(n))) {
+//         return console.log(true);
+//     }
+    
+//     return console.log(false);
+// }
+
+//чужое решение
+// function isSquare(n) {
+//     return console.log(Math.sqrt(n) % 1 === 0);
+// }
+
+// isSquare(-1);// false
+// isSquare( 0);// true
+// isSquare( 3);// false
+// isSquare( 4);// true
+// isSquare(25);// true
+// isSquare(26);// false
+
+
+// ========= #30
+// В этом небольшом задании вам дается строка чисел,
+// разделенных пробелами,
+// и вы должны вернуть наибольшее и наименьшее число.
+
+// Все номера действительны Int32, их не нужно проверять.
+// Во входной строке всегда будет хотя бы одно число.
+// Выходная строка должна состоять из двух чисел,
+// разделенных одним пробелом, причем наибольшее число должно быть первым.
+
+// Пример:
+// highAndLow("1 2 3 4 5");  // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+// highAndLow("1 9 3 4 -5"); // return "9 -5"
+
+//моё решение
+// function highAndLow(numbers){
+//     const arrNum = numbers.split(' ');
+//     const newArrNum = []
+
+//     newArrNum.push(Math.max(...arrNum));
+//     newArrNum.push(Math.min(...arrNum));
+
+//     return console.log(newArrNum.join(' '))
+// }
+
+//чужое решение
+// function highAndLow(numbers){
+//     numbers = numbers.split(' ');
+//     return console.log(`${Math.max(...numbers)} ${Math.min(...numbers)}`);
+// }
+
+// highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4");// "42 -9"
+// highAndLow("1 2 3");// "3 1"
+
+
+// ========= #31
+// Напишите функцию, которая разбивает строку и преобразует ее в массив слов.
+
+// function stringToArray(string){
+//     return console.log(string.split(' '));
+// }
+
+// stringToArray("Robin Singh");// ["Robin", "Singh"]
+// stringToArray("I love arrays they are my favorite");// ["I", "love", "arrays", "they", "are", "my", "favorite"]
+
+
+// ========= #32
+// Учитывая массив целых чисел в виде строк и чисел,
+// верните сумму значений массива,
+// как если бы все они были числами.
+// Верните ответ в виде числа.
+
+// function sumMix(x) {
+//     let sum = 0;
+
+//     for (const num of x) {
+//         sum += Number(num);
+//     }
+
+//     return console.log(sum);
+// }
+
+// sumMix([9, 3, '7', '3']);// 22
+// sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]);// 42
+// sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']);// 41
+
+
+// ========= #33
+// Подсчитайте количество дубликатов
+// Напишите функцию, которая будет возвращать
+// количество различных буквенных символов и цифровых цифр,
+// не зависящих от регистра,
+// которые встречаются во входной строке более одного раза.
+// Можно предположить, что входная строка содержит
+// только буквы(как прописные, так и строчные) и числовые цифры.
+
+//     Пример:
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+// function duplicateCount(text) {
+//     const arrDuplicate = [];
+//     let countDuplicate = 0;
+//     const str = text.toLowerCase();
+
+//     for (let i = 0; i < str.length; i += 1){
+//         const currentLetter = str[i];
+
+//         for (let b = i + 1; b < str.length; b += 1){
+//             const checkLetter = str[b];
+
+//             if (currentLetter === checkLetter && !arrDuplicate.includes(checkLetter)) {
+//                 countDuplicate += 1;
+//                 arrDuplicate.push(checkLetter);
+//                 break;
+//             }
+//         }
+//     }
+//     console.log(countDuplicate);
+// }
+
+// duplicateCount("");// 0
+// duplicateCount("abcde");// 0
+// duplicateCount("aabbcde");// 2
+// duplicateCount("aabBcde");// 2,"should ignore case"
+// duplicateCount("Indivisibility");// 1
+// duplicateCount("Indivisibilities");// 2
+
+
+// ========= #34
