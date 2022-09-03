@@ -761,11 +761,11 @@
 //         return console.log(this.potions);
 //     },
 
-//     addPotion(newPotion) {  
-//         for (const potion of this.potions){       
+//     addPotion(newPotion) {
+//         for (const potion of this.potions){
 //             if (potion.name === (newPotion.name)) {
 //             return console.log(`Error! Potion ${newPotion.name} is already in your inventory!`);
-//             }            
+//             }
 //         }
 
 //         this.potions.push(newPotion);
@@ -775,25 +775,25 @@
 //         for (let i = 0; i < this.potions.length; i += 1){
 //             const potion = this.potions[i];
 
-//             if (potion.name === potionName) {        
+//             if (potion.name === potionName) {
 //                 return this.potions.splice(i, 1);
-//             }            
+//             }
 //         }
 
-//         return console.log(`Potion ${potionName} is not in inventory!`);           
+//         return console.log(`Potion ${potionName} is not in inventory!`);
 //     },
 
 //     updatePotionName(oldName, newName) {
 //         for (let i = 0; i < this.potions.length; i += 1){
 //             const potion = this.potions[i];
 
-//             if (potion.name === oldName) {        
+//             if (potion.name === oldName) {
 
-//                 return potion.name = newName;          
-//             }            
+//                 return potion.name = newName;
+//             }
 //         }
 
-//         return console.log(`Potion ${oldName} is not in inventory!`);  
+//         return console.log(`Potion ${oldName} is not in inventory!`);
 //     },
 // };
 
@@ -808,3 +808,95 @@
 // atTheOldToad.updatePotionName("Dragon breath", "Polymorth");
 // atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion");
 // atTheOldToad.getPotions();
+
+
+//==================================================
+//==================================================
+// const book = [10, 20, 30, 50];
+
+// function addItem (book, ...item) {
+//     return console.log([...book, ...item]);
+// }
+
+// addItem(book, 'green', 3.14, 'five');
+
+//==================================================
+//==================================================
+
+// const book = {
+//     name: 'Sproot',
+//     countPages: 200,
+//     author: 'Liam Nisson',
+//     yearPrint: 1855,
+//     category: [
+//         'fantastic', 'detective', 'triller'
+//     ],
+
+//     showProp() {
+//         console.log(this);
+//     },
+
+//     addProp(prop) {    
+//         const keys = Object.keys(prop);
+//         const vals = Object.values(prop);
+
+//         for (let i = 0; i < keys.length; i += 1) {
+//             this[keys[i]] = vals[i];
+//         }
+//     },
+
+//     removeProp(nameProp) {
+//         delete book[nameProp];
+//     },
+// }
+
+// book.addProp({ color: 'red', size: '210mm * 297mm' });
+// console.log(book);
+
+// book.removeProp('author');
+// console.log(book);
+
+//==================================================
+//==================================================
+
+// const shop = {
+//     cart: [
+//         { id: '1555448551445', name: 'bread', count: 5 },
+//         { id: '1557575751445', name: 'water', count: 500 },
+//     ],
+
+//     addItemToCart(...item) {    
+//         this.cart = [
+//             ...this.cart,
+//             ...item,
+//         ]
+//     },
+
+//     removeItemFromCart(nameItem) {
+//         for (let i = 0; i < this.cart.length; i += 1) {
+//             const vals = Object.values(this.cart[i]);
+
+//             if (vals.includes(nameItem)) {
+//                 this.cart.splice(i, 1)    
+//                 break;
+//             }
+            
+//         }
+//     },
+// }
+
+// const item2 = { id: '56621155525899', name: 'onion', count: 10 }
+// const item3 = { id: '55588969933114', name: 'pepper', count: 3 }
+// shop.addItemToCart(item2, item3);
+// console.log(shop.cart);
+
+// shop.removeItemFromCart('onion');
+// console.log(shop.cart);
+
+//==================================================
+//==================================================
+
+
+
+
+
