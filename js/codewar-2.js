@@ -377,6 +377,3 @@
 // duplicateCount("aabBcde");// 2,"should ignore case"
 // duplicateCount("Indivisibility");// 1
 // duplicateCount("Indivisibilities");// 2
-
-
-// ========= #34
