@@ -301,30 +301,122 @@
 // Метод должен возвращать логическое значение и не учитывать регистр.
 // Строка может содержать любой символ.
 
+//моё решение
+// function XO(str) {
+//     const regStr = str.toLowerCase();
+//     let letters = {};
+//     let countLetters = 1;
 
-function XO(str) {
-    const regStr = str.toLowerCase();
-    // let letter1 = regStr.slice(0, 1);
-    // let letter2 = '';
+//     for (let i = 0; i < regStr.length; i += 1){
+//         let currentLetter = regStr.slice(i, i + 1);
 
-    const letters = {};
-    let letter = ''
+//         if ((currentLetter === 'x' | currentLetter === 'o') //доп условие по конкретным буквам
+//             && (!letters.hasOwnProperty(currentLetter))) {
+//             for (let j = i + 1; j < regStr.length; j += 1){
+//                 let testLetter = regStr.slice(j, j + 1);
 
-    for (let i = 0; i < regStr.length; i += 1){
-        letter = regStr.slice(i, i + 1);
+//                 if (currentLetter === testLetter) {
+//                     countLetters += 1;
+//                 }
+//             }
 
-        letters[letter] = 6;
-        // if () {
-            
-        // }
-        // console.log(letter);
-    }  
+//             letters[currentLetter] = countLetters;
+//             countLetters = 1;
+//         }
+//     }
 
-    return console.log(letters);
+//     const arrLettres = Object.keys(letters);
+
+//     if (!arrLettres.includes('x')) {
+//         letters = {...letters, x: 0}
+//     }
+
+//     if (!arrLettres.includes('o')) {
+//         letters = {...letters, o: 0}
+//     }
+
+//     const countArrLettres = Object.values(letters);
+//     return console.log(countArrLettres.every((count, index, array) => array[0] === count));
+// }
+
+//чужое решение
+// function XO(str) {
+//     return console.log(str.toLowerCase().split('x').length === str.toLowerCase().split('o').length); //
+// }
+
+// XO('xo') //true
+// XO("xxOo") //true
+// XO("xxxm") //false
+// XO("Oo") //false
+// XO("ooom") //false
+
+
+// ========= #44
+// Даны два целых числа a и b,
+// которые могут быть положительными или отрицательными,
+// найдите сумму всех целых чисел между ними и включая их и верните ее.
+// Если два числа равны, верните a или b.
+
+// Примечание: a и b не упорядочены!
+// (1, 0) --> 1 (1 + 0 = 1)
+// (1, 2) --> 3 (1 + 2 = 3)
+// (0, 1) --> 1 (0 + 1 = 1)
+// (1, 1) --> 1 (1 since both are same)
+// (-1, 0) --> -1 (-1 + 0 = -1)
+// (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+
+// function getSum(a, b){
+//     let arrNum = [];
+
+//     const start = Math.min(a, b);
+//     const end = Math.max(a, b);
+
+//     for (let i = start; i <= end; i += 1){
+//         arrNum = [...arrNum, i]
+//     }
+
+//     return console.log(arrNum.reduce((sum, num) => sum + num, 0));
+// }
+
+// getSum(0, -1) //-1
+// getSum(2, 2) //2
+// getSum(0, 1) //1
+// getSum(-1, 2) //2
+// getSum(1, 2) //3
+// getSum(-350, -408) //-22361
+// getSum(-292, -536) //-101430
+
+
+// ========= #45
+// Вам дан массив(список) строк и целое число k.
+// Ваша задача — вернуть первую самую длинную строку,
+// состоящую из k последовательных строк, взятых в массиве.
+
+function longestConsec(strarr, k) {
+    const maxLength = strarr.reduce((len, str) => {
+        if (str.length > len) {
+            return len = str.length;
+        } 
+        return len;
+    }, 0)
+
+    const startWord = strarr.find(word => word.length === maxLength);
+    const indexWord = strarr.indexOf(startWord); //в массиве с 0 отсчёт
+
+    const newArr = strarr.splice(indexWord, k)
+    console.log(maxLength + ' ' + startWord + ' ' + indexWord)
+    return console.log(newArr.join('')); 
 }
 
-// XO('xo');// true
-XO("xxOogg");// true
-// XO("xxxm");// false
-// XO("Oo");// false
-// XO("ooom");// false
+// longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2)// "abigailtheta")
+// longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1)// "oocccffuucccjjjkkkjyyyeehh"
+longestConsec([], 3)// ""
+// longestConsec(["itvayloxrp","wkppqsztdkmvcuwvereiupccauycnjutlv","vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2)// "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck"
+// longestConsec(["wlwsasphmxx","owiaxujylentrklctozmymu","wpgozvxxiu"], 2)// "wlwsasphmxxowiaxujylentrklctozmymu"
+longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], -2)// ""
+longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 3)// "ixoyx3452zzzzzzzzzzzz"
+// longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 15)// ""
+longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 0)// ""
+
+
+// console.log(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"].splice(4, 2))
