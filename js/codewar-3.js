@@ -387,36 +387,96 @@
 // getSum(-292, -536) //-101430
 
 
-// ========= #45
+// ========= #45a
 // Вам дан массив(список) строк и целое число k.
 // Ваша задача — вернуть первую самую длинную строку,
 // состоящую из k последовательных строк, взятых в массиве.
 
-function longestConsec(strarr, k) {
-    const maxLength = strarr.reduce((len, str) => {
-        if (str.length > len) {
-            return len = str.length;
-        } 
-        return len;
-    }, 0)
+// function longestConsec(strarr, k) {
+//     const maxLength = strarr.reduce((len, str) => {
+//         if (str.length > len) {
+//             return len = str.length;
+//         }
+//         return len;
+//     }, 0)
 
-    const startWord = strarr.find(word => word.length === maxLength);
-    const indexWord = strarr.indexOf(startWord); //в массиве с 0 отсчёт
+//     const startWord = strarr.find(word => word.length === maxLength);
+//     const indexWord = strarr.indexOf(startWord); //в массиве с 0 отсчёт
 
-    const newArr = strarr.splice(indexWord, k)
-    console.log(maxLength + ' ' + startWord + ' ' + indexWord)
-    return console.log(newArr.join('')); 
-}
+//     const newArr = strarr.splice(indexWord, k)
+//     return console.log(newArr.join(''));
+// }
 
 // longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2)// "abigailtheta")
 // longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1)// "oocccffuucccjjjkkkjyyyeehh"
-longestConsec([], 3)// ""
+// longestConsec(["itvayloxrp","wkppqsztdkmvcuwvereiupccauycnjutlv","vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2)// "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck"
+
+// ========= #45b
+// Вам дан массив(список) строк и целое число k.
+// Ваша задача — вернуть первую самую длинную строку,
+// состоящую из k последовательных строк, взятых в массиве.
+
+// strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], k = 2
+// Concatenate the consecutive strings of strarr by 2, we get:
+// treefoling   (length 10)  concatenation of strarr[0] and strarr[1]
+// folingtrashy ("      12)  concatenation of strarr[1] and strarr[2]
+// trashyblue   ("      10)  concatenation of strarr[2] and strarr[3]
+// blueabcdef   ("      10)  concatenation of strarr[3] and strarr[4]
+// abcdefuvwxyz ("      12)  concatenation of strarr[4] and strarr[5]
+
+// Two strings are the longest: "folingtrashy" and "abcdefuvwxyz".
+// The first that came is "folingtrashy" so
+// longest_consec(strarr, 2) should return "folingtrashy".
+
+// In the same way:
+// longest_consec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 2)
+//--> "abigailtheta"
+
+// n being the length of the string array,
+// if n = 0 or k > n or k <= 0
+// return ""(return Nothing in Elm, "nothing" in Erlang).
+
+//моё решение
+// function longestConsec(strarr, k) {
+//     let currentStr = '';
+//     let maxLenStr = '';
+//     let lenStr = 0;
+
+//     if ((strarr.length === 0) || (k > strarr.length) || (k <= 0)) {
+//         return "";
+//     }
+
+//     for (let i = 0; i < strarr.length; i += 1) {        
+//         currentStr = strarr.slice(i, i + k).join('');
+        
+//         if (currentStr.length > lenStr) {
+//             lenStr = currentStr.length;
+//             maxLenStr = currentStr;
+//         }        
+//     }
+
+//     return console.log(maxLenStr);
+// }
+
+//чужое решение
+// function longestConsec(strarr, k) {
+//     if (strarr.length == 0 || k > strarr.length || k < 1)
+//         return console.log("");
+    
+//     let lens = strarr.map((_, i, arr) => arr.slice(i, i + k).join('').length);
+//     // console.log(lens);
+//     let i = lens.indexOf(Math.max(...lens));
+//     // console.log(i);
+//     // console.log(strarr.slice(i, i + k));    
+//     return console.log(strarr.slice(i, i + k).join(''));
+// }
+
+// longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2)// "abigailtheta")
+// longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1)// "oocccffuucccjjjkkkjyyyeehh"
+// longestConsec([], 3)// ""
 // longestConsec(["itvayloxrp","wkppqsztdkmvcuwvereiupccauycnjutlv","vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2)// "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck"
 // longestConsec(["wlwsasphmxx","owiaxujylentrklctozmymu","wpgozvxxiu"], 2)// "wlwsasphmxxowiaxujylentrklctozmymu"
-longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], -2)// ""
-longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 3)// "ixoyx3452zzzzzzzzzzzz"
+// longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], -2)// ""
+// longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 3)// "ixoyx3452zzzzzzzzzzzz"
 // longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 15)// ""
-longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 0)// ""
-
-
-// console.log(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"].splice(4, 2))
+// longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 0)// ""
