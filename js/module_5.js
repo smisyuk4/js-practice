@@ -303,7 +303,8 @@
 //     }
 
 //     addItem(newItem){
-//         this.items.push(newItem);
+//         this.items.push(newItem); //1 метод
+        // this.items = [...this.items, newItem]; //2 метод
 //     }
 
 //     removeItem(itemToRemove){
