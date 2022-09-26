@@ -27,4 +27,3 @@ const onClickBtnRemove = () => {
 refs.btnHide.addEventListener('click', onClickBtnHide)
 refs.btnShow.addEventListener('click', onClickBtnShow)
 refs.btnRemove.addEventListener('click', onClickBtnRemove)
-refs.btn.addEventListener('click', onClickBtnRemove)
