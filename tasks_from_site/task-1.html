@@ -9,10 +9,17 @@
 <body>
     <a href="/index.html" style="display: block; margin-bottom: 50px;">HOME</a>
 
-    <input type="button" id="hider" value="Натисніть, щоб текст зник" />
+    <input type="button" id="hider" value="Натисніть, щоб текст СХОВАВСЯ" />
+    <input type="button" id="show" value="Натисніть, щоб текст З'ЯВИВСЯ" />
+        <input type="button" id="remove" value="Натисніть, щоб текст ВИДАЛИВСЯ" />
     
     <div id="text">Текст</div>
 
+    <style>
+        [hidden = true]{
+            overflow: hidden;
+        }
+    </style>
     <script src="/js/tasks_from_site/task-1.js"></script>
 </body>
 </html>

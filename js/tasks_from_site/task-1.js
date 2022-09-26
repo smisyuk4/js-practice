@@ -5,12 +5,26 @@
 // елемент < div id = "text" > зникав.
 
 const refs = {
-    btn: document.querySelector('#hider'),
+    btnHide: document.querySelector('#hider'),
+    btnShow: document.querySelector('#show'),
+    btnRemove: document.querySelector('#remove'),
     elem: document.querySelector('#text'),
 }
 
-const onClickRemoveBtn = () => {
+const onClickBtnHide = () => {
+    refs.elem.setAttribute('hidden', 'true')
+}
+
+const onClickBtnShow = () => {
+    refs.elem.removeAttribute('hidden')
+}
+
+const onClickBtnRemove = () => {
     refs.elem.remove();
 }
 
-refs.btn.addEventListener('click', onClickRemoveBtn)
+
+refs.btnHide.addEventListener('click', onClickBtnHide)
+refs.btnShow.addEventListener('click', onClickBtnShow)
+refs.btnRemove.addEventListener('click', onClickBtnRemove)
+refs.btn.addEventListener('click', onClickBtnRemove)
