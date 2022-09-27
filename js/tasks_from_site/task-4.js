@@ -10,17 +10,18 @@
 
 const refs = {
     btnPattern: document.querySelector('.btn-pattern'),
-    pane: document.querySelectorAll('.pane'),
+    panes: document.querySelectorAll('.pane'),
 }
 
-refs.pane.forEach(item => {
+refs.panes.forEach(pane => {
     const btnClone = refs.btnPattern.cloneNode(true);
     btnClone.classList.replace('btn-pattern', 'js-btn-close');
-    item.prepend(btnClone);
+    pane.prepend(btnClone);
 })
 
 refs.btnPattern.remove();
 
+//========== моё решение
 const onClickBtnClose = (event) => {
     if (event.target.classList.contains('js-btn-close')) {
         event.target.parentNode.remove()
@@ -29,3 +30,11 @@ const onClickBtnClose = (event) => {
 }
 
 window.addEventListener('click', onClickBtnClose)
+
+
+//========== чужое решение
+// refs.panes.forEach(pane => {
+//     pane.firstChild.onclick = () => {
+//         pane.remove()
+//     }
+// });
