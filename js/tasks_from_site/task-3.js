@@ -5,7 +5,6 @@
 const refs = {
     menu: document.querySelector('.menu'),
     title: document.querySelector('.title'),
-    // menuItems: document.querySelector('.menu ul'),
 }
 
 const onClickTitle = () => {

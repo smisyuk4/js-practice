@@ -128,7 +128,7 @@
 //     firstName: "Jacob",
 //     lastName: "Mercer",
 //     getFullName() {
-//         return `${this.firstName} ${this.lastName}`;
+        return `${this.firstName} ${this.lastName}`;
 //     },
 // };
 
