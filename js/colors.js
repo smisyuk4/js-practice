@@ -41,21 +41,20 @@ const onClickCheckCard = (event) => {
         return;
     }
 
-    const currentActiveBtn = document.querySelector('.check');
+    const lastActiveBtn = document.querySelector('.check');
     
-    refs.body.style.backgroundColor = event.target.dataset.value;
-
-    
-
-    if (currentActiveBtn) {
-        currentActiveBtn.classList.remove('check');        
-        refs.body.style.backgroundColor = '';     
-    }
-
-    if (!currentActiveBtn) {
+    if (!event.target.classList.contains('check')) {
         event.target.classList.toggle('check');
-        // refs.body.style.backgroundColor = event.target.dataset.value;
     }
+
+    if (lastActiveBtn) {
+        lastActiveBtn.classList.remove('check');        
+        refs.body.style.backgroundColor = '';   
+    }
+
+    const newActiveBtn = document.querySelector('.check');
+
+    refs.body.style.backgroundColor = newActiveBtn?.dataset.value;
 }
 
 refs.colorsContainer.addEventListener('click', onClickCheckCard)
