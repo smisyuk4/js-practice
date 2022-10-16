@@ -61,7 +61,7 @@ const onClickButtonLeft = (event) => {
 
 const onClickButtonRight = (event) => {
     position -= widthPic * countPic;
-    position = Math.max(position, -widthPic * (refs.items.length - countPic))
+    position = Math.max(position, -widthPic * (refs.items.length - 3))
     refs.images.style.marginLeft = `${position}px`;
 }
 
