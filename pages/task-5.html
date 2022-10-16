@@ -9,24 +9,36 @@
 <body>
     <a href="/index.html" style="display: block; width: 50px; margin-bottom: 50px;">HOME</a>
         
-    <button class="arrow">⇦</button>
-    <button class="arrow">⇨</button>
-
-
-    <ul>
-        <li><img src="https://en.js.cx/carousel/1.png"></li>
-        <li><img src="https://en.js.cx/carousel/2.png"></li>
-        <li><img src="https://en.js.cx/carousel/3.png"></li>
-        <li><img src="https://en.js.cx/carousel/4.png"></li>
-        <li><img src="https://en.js.cx/carousel/5.png"></li>
-        <li><img src="https://en.js.cx/carousel/6.png"></li>
-        <li><img src="https://en.js.cx/carousel/7.png"></li>
-        <li><img src="https://en.js.cx/carousel/8.png"></li>
-        <li><img src="https://en.js.cx/carousel/9.png"></li>
-        <li><img src="https://en.js.cx/carousel/10.png"></li>
-    </ul>
+    <div class="control">
+        <button class="arrow">⇦</button>
+        <button class="arrow">⇨</button>
+    </div> 
+    <div class="courusel">
+        <ul>
+            <li><img src="https://en.js.cx/carousel/1.png"></li>
+            <li><img src="https://en.js.cx/carousel/2.png"></li>
+            <li><img src="https://en.js.cx/carousel/3.png"></li>
+            <li><img src="https://en.js.cx/carousel/4.png"></li>
+            <li><img src="https://en.js.cx/carousel/5.png"></li>
+            <li><img src="https://en.js.cx/carousel/6.png"></li>
+            <li><img src="https://en.js.cx/carousel/7.png"></li>
+            <li><img src="https://en.js.cx/carousel/8.png"></li>
+            <li><img src="https://en.js.cx/carousel/9.png"></li>
+            <li><img src="https://en.js.cx/carousel/10.png"></li>
+        </ul>
+    </div>
+    
 
     <style>
+        .control{
+            display: flex;
+            justify-content: space-around;
+            width: 100px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .arrow {
             padding: 0;
             background: #ddd;
@@ -47,13 +59,20 @@
             cursor: pointer;
         }
 
-        ul {
+        .courusel{
+            /* overflow: hidden; */
+            width: calc(130px * 3);
+            margin: 0 auto;
+            border: 2px solid black;
+        }
+
+        ul {            
             height: 130px;
             width: 9999px;
             margin: 0;
             padding: 0;
             list-style: none;
-            font-size: 0;
+            font-size: 0;            
         }
 
         ul img {
@@ -65,6 +84,10 @@
         ul li {
             display: inline-block; /* видаляє зайві пробіли між елементами списку */
         }
+
+        .hide {
+            display: none;
+        }    
     </style>
 
     <script src="/js/task-5.js" type="module"></script>
