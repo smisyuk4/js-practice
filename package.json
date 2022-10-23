@@ -1,10 +1,11 @@
 {
   "name": "my-project",
   "source": "src/index.html",
+  "homepage": "https://your_username.github.io/js-practice",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build src/*.html --public-url /js-practice/"
   },
   "dependencies": {
     "basiclightbox": "^5.0.4",
