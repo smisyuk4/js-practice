@@ -1,7 +1,17 @@
 {
+  "name": "my-project",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
   "dependencies": {
     "basiclightbox": "^5.0.4",
     "lodash.throttle": "^4.1.1",
     "simplelightbox": "^2.10.4"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0"
   }
 }

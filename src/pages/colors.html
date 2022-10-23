@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colors</title>
+</head>
+<body>
+    <a class="menu-link" href="../index.html">BACK</a>
+
+    <div class="colors-container">
+
+    </div>
+
+    <style>
+        .menu-link{
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .colors-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .js-card{
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+        }
+
+        .js-card p {
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .js-card.check {
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+
+    </style>
+
+    <script src="../js/colors.js" type="module"></script>
+</body>
+</html>

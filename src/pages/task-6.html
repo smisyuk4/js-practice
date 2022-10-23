@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6</title>
+</head>
+<body>
+    <a href="../index.html" style="display: block; width: 50px; margin-bottom: 50px;">HOME</a>
+
+    <div class="table-data">
+        <table>
+            <caption>Результаты референдума 17 марта 1991 года</caption>
+            <thead>
+                <tr>
+                    <th>Республика</th>
+                    <th>Число граждан</th>
+                    <th>Число граждан,
+                        ответивших «Да», %</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Башкирская ССР</td>
+                    <td>2 719 637</td>
+                    <td>85,9</td>
+                </tr>
+                <tr>
+                    <td>Бурятская ССР</td>
+                    <td>668 231</td>
+                    <td>83,5</td>
+                </tr>
+                <tr>
+                    <td>Дагестанская ССР</td>
+                    <td>812 009</td>
+                    <td>82,6</td>
+                </tr>                              
+            </tbody>   
+
+            <tfoot>
+                <td><input class="name" type="text"></td>
+                <td><input class="population" type="text"></td>
+                <td><input class="persent" type="text"></td>
+            </tfoot>
+        </table>
+        <div class="control">
+            <button class="button-remove">удалить последнюю строку</button>
+            <button class="button-add">добавить новую строку</button>
+        </div>        
+    </div>
+    
+
+    <style>
+        .table-data{
+            /* position: relative; */
+            width: 650px;
+            margin: 0 auto;
+        }
+
+        caption{
+            font-size: large;
+            margin-bottom: 10px;
+        }
+
+        table{   
+            margin: 0 auto;     
+            margin-bottom: 10px;     
+            padding: 0px;            
+            border: 1px solid black;
+        }
+
+        thead{
+            background-color: rgb(61, 193, 233);
+        }
+
+        th, td {
+            padding: 2px;   
+            border: 1px solid black;
+        }
+
+        tfoot {
+            background-color: rgba(119, 224, 136, 0.473);
+        }
+
+        input {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            border: none;   
+            outline: transparent;       
+            background-color: transparent;  
+        }     
+        
+        .control{
+            display: flex;
+            justify-content: space-evenly
+        }
+
+        .button-add {
+            background-color: rgba(119, 224, 136, 0.473);
+            border: 1px solid green;
+            border-radius: 5px;
+        }
+
+        .button-add:hover, 
+        .button-add:focus,
+        .button-remove:hover,
+        .button-remove:focus{
+            background-color: rgba(229, 236, 230, 0.473);
+        }
+
+        .button-remove {
+            background-color: rgba(224, 119, 119, 0.473);
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+    </style>
+    
+    <script src="../js/task-6.js"></script>
+</body>
+</html>
