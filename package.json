@@ -12,6 +12,7 @@
     "simplelightbox": "^2.10.4"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
     "parcel": "^2.7.0"
   }
 }

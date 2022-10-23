@@ -1,6 +1,5 @@
-// import * as basicLightbox from 'basiclightbox'
-
-
+import * as basicLightbox from 'basiclightbox'
+import 'basiclightbox/dist/basicLightbox.min.css'
 
 const refs = {
     gallery: document.querySelector('.gallery'),
@@ -23,6 +22,8 @@ const onClickImage = (event) => {
     }
 
     const largeImage = event.target.getAttribute('data-link');
+
+    console.log(largeImage)
 
     instance = basicLightbox.create(`
         <img id="large-img" src="${largeImage}">
