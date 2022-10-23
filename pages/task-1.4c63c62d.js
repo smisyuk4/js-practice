@@ -1,0 +1,2 @@
+"use strict";const refs={btnHide:document.querySelector("#hider"),btnShow:document.querySelector("#show"),btnRemove:document.querySelector("#remove"),elem:document.querySelector("#text")},onClickBtnHide=()=>{refs.elem.setAttribute("hidden","true")},onClickBtnShow=()=>{refs.elem.removeAttribute("hidden")},onClickBtnRemove=()=>{refs.elem.remove()};refs.btnHide.addEventListener("click",onClickBtnHide),refs.btnShow.addEventListener("click",onClickBtnShow),refs.btnRemove.addEventListener("click",onClickBtnRemove);
+//# sourceMappingURL=task-1.4c63c62d.js.map

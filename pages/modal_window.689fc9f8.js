@@ -1,0 +1,2 @@
+const e={btnOpen:document.querySelector(".btn-open-modal"),btnClose:document.querySelector(".btn-close-modal"),backdrop:document.querySelector(".backdrop-modal")},t=()=>{window.removeEventListener("keydown",n),e.backdrop.classList.toggle("hide")},n=e=>{"Escape"===e.code&&t()};e.btnOpen.addEventListener("click",(t=>{window.addEventListener("keydown",n),e.backdrop.classList.toggle("hide")})),e.btnClose.addEventListener("click",t),e.backdrop.addEventListener("click",(e=>{e.currentTarget===e.target&&t()}));
+//# sourceMappingURL=modal_window.689fc9f8.js.map

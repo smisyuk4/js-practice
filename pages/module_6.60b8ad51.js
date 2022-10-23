@@ -1,0 +1,2 @@
+const e={input:document.querySelector(".js-input"),checkbox:document.querySelector(".js-checkbox"),checkboxOutput:document.querySelector(".js-checkbox-output"),btn:document.querySelector(".js-btn")};e.input.addEventListener("input",(t=>{e.checkboxOutput.textContent=t.currentTarget.value})),e.checkbox.addEventListener("change",(t=>{e.btn.disabled=!t.currentTarget.checked}));
+//# sourceMappingURL=module_6.60b8ad51.js.map

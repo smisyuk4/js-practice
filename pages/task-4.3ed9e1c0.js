@@ -1,0 +1,2 @@
+"use strict";const refs={btnPattern:document.querySelector(".btn-pattern"),panes:document.querySelectorAll(".pane")};refs.panes.forEach((e=>{const t=refs.btnPattern.cloneNode(!0);t.classList.replace("btn-pattern","js-btn-close"),e.prepend(t)})),refs.btnPattern.remove();const onClickBtnClose=e=>{e.target.classList.contains("js-btn-close")&&e.target.parentNode.remove()};window.addEventListener("click",onClickBtnClose);
+//# sourceMappingURL=task-4.3ed9e1c0.js.map
