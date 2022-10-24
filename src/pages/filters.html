@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filters</title>
+</head>
+
+<body>
+    <a class="menu-link" href="../index.html" style="display: block; width: 50px; margin-bottom: 50px;">BACK</a>
+    
+    <form>
+        <label>
+            <span >Колір</span>
+            <select name="color" id="color">
+                <option></option>
+                <option value="red">Червоний</option>
+                <option value="green">Зелений</option>
+                <option value="blue">Блакитний</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Розмір</span>
+            <select name="size" id="size">
+                <option></option>
+                <option value="small">Маленький</option>
+                <option value="medium">Середній</option>
+                <option value="large">Великий</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Матеріал</span> 
+            <select name="material" id="material">
+                <option></option>
+                <option value="steel">Сталь</option>
+                <option value="wood">Деревина</option>
+                <option value="plastic">Пластик</option>
+            </select>
+        </label>
+
+        <button class="apply" type="submit">Застосувати</button>
+        <button class="reset" type="reset">Зкинути</button>
+    </form>
+
+
+    <style>
+        form {
+            display: flex;
+        }
+
+        label {
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        span {
+            display: block;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .apply {
+            margin-right: 10px;
+        }
+
+        .apply, 
+        .reset{
+            width: 100px;
+        }
+    </style>
+
+
+    <script src="../js/filters.js" type="module"></script>
+</body>
+
+</html>
