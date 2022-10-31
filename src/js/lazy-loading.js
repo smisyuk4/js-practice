@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading
+
 // https://afarkas.github.io/lazysizes/index.html
 // https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md
 // npm install lazysizes --save
