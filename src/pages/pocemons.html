@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocemons</title>
+</head>
+
+<body>
+    <a class="menu-link" href="../index.html" style="display: block; width: 50px; margin-bottom: 50px;">BACK</a>
+    
+    <button class="make-btn">MAKE POCEMON</button>
+    <div class="pocemon">        
+        <svg class="icon-power" width="20" height="20">
+            <use href="../images/icons/symbol-defs.svg#icon-power"></use>
+        </svg>
+    </div>
+
+    <style>
+        .make-btn {
+            margin-bottom: 10px;
+        }
+
+        .pocemon-card{
+            padding: 5px;
+            width: 250px;
+            background-color: darkgrey;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+
+        .pocemon-avatar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            width: 250px;
+            height: 250px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .pocemon-pic{
+            width: 200px;               
+        }
+
+        .pocemon-desc{
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        .pocemon-desc span {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pocemon-name{
+            color: brown;
+            text-transform: uppercase;
+        }
+
+        .pocemon-abilitys{
+            padding: 0;
+            list-style: none;
+        }
+
+        .pocemon-abilitys li {
+            padding-left: 20px;
+        }
+
+        .icon-power{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-power use {
+            fill: rgb(231, 153, 8);
+        }
+        
+    </style>
+
+    <script src="../js/pocemons.js" type="module"></script>
+</body>
+
+</html>
