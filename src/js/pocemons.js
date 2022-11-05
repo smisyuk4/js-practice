@@ -1,5 +1,7 @@
 // https://pokeapi.co/docs/v2
 
+import iconPower from '../images/icons/icon-power.svg'
+
 const refs = {
     pocemon: document.querySelector('.pocemon'),
     buttonNewPoce: document.querySelector('.make-btn')
@@ -55,14 +57,14 @@ function pocemonCadrdTemplate(pocemon) {
     const abilitiList = abilities.map(item => {
         return `<li>
                     <svg class="icon-power" width="20" height="20">
-                        <use  href="../images/icons/symbol-defs.svg#icon-power"></use>
-                    </svg>
+                        <use href="${iconPower}"></use>
+                    </svg>                    
                     ${item.ability.name}
                 </li>`
     }).join('')
 
     return `<div class="pocemon-card">
-                <div class="pocemon-avatar">
+                <div class="pocemon-avatar">                
                     <img class="pocemon-pic"
                         src="${img}" alt="">
                 </div>
