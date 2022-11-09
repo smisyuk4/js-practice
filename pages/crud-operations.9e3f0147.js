@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"gv85l":[function(require,module,exports) {
+})({"lrFem":[function(require,module,exports) {
 "use strict";
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "0e900952b21fc386";
+module.bundle.HMR_BUNDLE_ID = "3b8eb85e9e3f0147";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
   HMRAsset,
@@ -531,66 +531,8 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"jN9DH":[function(require,module,exports) {
-// https://pokeapi.co/docs/v2
-// import iconPower from '../images/icons/icon-power.svg'
-const refs = {
-    pocemon: document.querySelector(".pocemon"),
-    buttonNewPoce: document.querySelector(".make-btn")
-};
-refs.buttonNewPoce.addEventListener("click", generateCard);
-function generateCard() {
-    refs.pocemon.innerHTML = "";
-    const id = generateId();
-    getFetch(id).then((response)=>{
-        if (!response.ok) throw new Error(response.status);
-        return response.json();
-    }).then((data)=>{
-        console.log(data);
-        const pocemon = {
-            img: data.sprites.front_default,
-            id: data.id,
-            name: data.name,
-            abilities: data.abilities,
-            species: data.species.name,
-            weight: data.weight
-        };
-        const markup = pocemonCadrdTemplate(pocemon);
-        refs.pocemon.insertAdjacentHTML("beforeend", markup);
-    }).catch((error)=>{
-        console.log(error);
-    });
-}
-function generateId(min = 0, max = 500) {
-    return Math.floor(Math.random() * (max - min) + min);
-}
-function getFetch(id) {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
-}
-function pocemonCadrdTemplate(pocemon) {
-    const { img , id , name , abilities , species , weight  } = pocemon;
-    const abilitiList = abilities.map((item)=>{
-        return `<li class="ability-item">               
-                    ${item.ability.name}
-                </li>`;
-    }).join("");
-    return `<div class="pocemon-card">
-                <div class="pocemon-avatar">                
-                    <img class="pocemon-pic"
-                        src="${img}" alt="">
-                </div>
-                <div class="pocemon-desc">
-                    <p class="pocemon-id"><span>id:</span> ${id}</p>
-                    <p class="pocemon-name"><span>name:</span> ${name}</p>
-                    <ul class="pocemon-abilitys"><span>abilities:</span>
-                        ${abilitiList}
-                    </ul>
-                    <p class="pocemon-species"><span>species:</span> ${species}</p>
-                    <p class="pocemon-weight"><span>weight:</span> ${weight}</p>
-                </div>           
-            </div>`;
-}
+},{}],"4mZA5":[function(require,module,exports) {
 
-},{}]},["gv85l","jN9DH"], "jN9DH", "parcelRequire716c")
+},{}]},["lrFem","4mZA5"], "4mZA5", "parcelRequire716c")
 
-//# sourceMappingURL=pocemons.b21fc386.js.map
+//# sourceMappingURL=crud-operations.9e3f0147.js.map
