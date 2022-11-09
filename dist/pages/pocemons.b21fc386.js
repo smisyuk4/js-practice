@@ -532,10 +532,8 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"jN9DH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // https://pokeapi.co/docs/v2
-var _iconPowerSvg = require("../images/icons/icon-power.svg");
-var _iconPowerSvgDefault = parcelHelpers.interopDefault(_iconPowerSvg);
+// import iconPower from '../images/icons/icon-power.svg'
 const refs = {
     pocemon: document.querySelector(".pocemon"),
     buttonNewPoce: document.querySelector(".make-btn")
@@ -572,10 +570,7 @@ function getFetch(id) {
 function pocemonCadrdTemplate(pocemon) {
     const { img , id , name , abilities , species , weight  } = pocemon;
     const abilitiList = abilities.map((item)=>{
-        return `<li>
-                    <svg class="icon-power" width="20" height="20">
-                        <use href="${0, _iconPowerSvgDefault.default}"></use>
-                    </svg>                    
+        return `<li class="ability-item">               
                     ${item.ability.name}
                 </li>`;
     }).join("");
@@ -595,73 +590,6 @@ function pocemonCadrdTemplate(pocemon) {
                 </div>           
             </div>`;
 }
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../images/icons/icon-power.svg":"9Gqj9"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"9Gqj9":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("1fw1O") + "../icon-power.d4589d4e.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
 
 },{}]},["gv85l","jN9DH"], "jN9DH", "parcelRequire716c")
 

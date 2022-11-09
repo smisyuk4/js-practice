@@ -49,10 +49,19 @@
             font-size: 18px;
         }
 
-        .pocemon-desc span {
+        .pocemon-desc span{
             font-weight: 700;
             text-transform: uppercase;
         }
+
+        .ability-item::before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            background-color: brown;
+        } 
 
         .pocemon-name{
             color: brown;
@@ -66,17 +75,10 @@
 
         .pocemon-abilitys li {
             padding-left: 20px;
-        }
-
-        .icon-power{
             display: flex;
-            justify-content: center;
             align-items: center;
         }
 
-        .icon-power use {
-            fill: rgb(231, 153, 8);
-        }
         
     </style>
 

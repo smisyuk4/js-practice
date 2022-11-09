@@ -1,6 +1,6 @@
 // https://pokeapi.co/docs/v2
 
-import iconPower from '../images/icons/icon-power.svg'
+// import iconPower from '../images/icons/icon-power.svg'
 
 const refs = {
     pocemon: document.querySelector('.pocemon'),
@@ -30,10 +30,7 @@ function generateCard() {
             abilities: data.abilities,
             species: data.species.name,
             weight: data.weight,
-        }
-
-        
-        
+        }        
 
         const markup = pocemonCadrdTemplate(pocemon)
         refs.pocemon.insertAdjacentHTML('beforeend', markup)
@@ -55,10 +52,7 @@ function pocemonCadrdTemplate(pocemon) {
     const {img, id, name, abilities, species, weight} = pocemon
 
     const abilitiList = abilities.map(item => {
-        return `<li>
-                    <svg class="icon-power" width="20" height="20">
-                        <use href="${iconPower}"></use>
-                    </svg>                    
+        return `<li class="ability-item">               
                     ${item.ability.name}
                 </li>`
     }).join('')
