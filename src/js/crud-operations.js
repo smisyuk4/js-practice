@@ -43,6 +43,7 @@ function onClickSendBtn(event) {
     //send userData to storage
     console.log(userData)
     event.target.reset()
+    refs.sendBtn.setAttribute('disabled', true)
 }
 
 function onInputChanges(event) {
