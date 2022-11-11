@@ -12,6 +12,11 @@
 // class formData
 //https://www.youtube.com/watch?v=iJq-NwbZL84
 
+// POST
+// GET
+// PUT и PATCH
+// DELETE
+
 const refs = {
     userForm: document.querySelector('.user-form'),
     sendBtn: document.querySelector('.user-form button'),
@@ -59,4 +64,16 @@ function onInputChanges(event) {
     if (length === 4) {
         refs.sendBtn.removeAttribute('disabled')
     }
+}
+
+function fetch(options) {
+    return fetch('link', options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.status);
+            }
+            return response.json()
+        })
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
 }
