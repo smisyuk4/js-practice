@@ -2,13 +2,13 @@
   "autor": [
     {
       "id": 1,
-      "name": "Іван Олександрович",
-      "surname": "Аксьонов",
-      "email": "aks@gmail.com",
-      "number": "050-48-38-779",
+      "name": "Сергiй",
+      "surname": "Їжакевич",
+      "email": "smisyuk@gmail.com",
+      "number": "22222222222",
       "skills": [
-        "HTML",
-        "CSS"
+        "JS",
+        "React"
       ]
     },
     {
@@ -16,7 +16,7 @@
       "name": "Микола Тадіонович",
       "surname": "Барась",
       "email": "bars@gmail.com",
-      "number": "050-48-38-779",
+      "number": "050-333-55-666",
       "skills": [
         "HTML",
         "CSS"
@@ -27,7 +27,7 @@
       "name": "Іван Захарович",
       "surname": "Бойко",
       "email": "boikoIZ@gmail.com",
-      "number": "050-48-38-779",
+      "number": "050-333-55-666",
       "skills": [
         "HTML",
         "CSS",
@@ -106,9 +106,8 @@
       "email": "girkiyVP@gmail.com",
       "number": "234234234234234",
       "skills": [
-        "CSS",
-        "JS",
-        "React"
+        "HTML",
+        "CSS"
       ],
       "id": 10
     },
@@ -245,6 +244,39 @@
         "CSS"
       ],
       "id": 24
+    },
+    {
+      "name": "test7",
+      "surname": "edwefwwef",
+      "email": "test@sddsds",
+      "number": "243234",
+      "skills": [
+        "CSS"
+      ],
+      "id": 25
+    },
+    {
+      "name": "test8",
+      "surname": "qweqweqw",
+      "email": "qweqweq@dsdsd",
+      "number": "234234234",
+      "skills": [
+        "CSS"
+      ],
+      "id": 26
+    },
+    {
+      "name": "test9-patch",
+      "surname": "werwerwer",
+      "email": "test-family@sdfsdf",
+      "number": "345345345",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JS",
+        "React"
+      ],
+      "id": 27
     }
   ],
   "comments": [

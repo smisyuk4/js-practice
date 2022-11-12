@@ -24,6 +24,8 @@ const refs = {
     getAutor: document.querySelector('.get-autor'),
     inputAutor: document.querySelectorAll('.get-autor input'),
     resultGetAutor: document.querySelector('.result'),
+    patchForm: document.querySelector('.patch-autor'),
+    patchBtn: document.querySelector('.patch-autor button'),
     getBtn: document.querySelector('.get-autor button'),
     sortBtns: document.querySelector('.sort-buttons'),
 }
@@ -34,11 +36,13 @@ refs.autorForm.addEventListener('submit', onClickSendBtn)
 refs.getAutor.addEventListener('input', onInputChangesGet)
 refs.getAutor.addEventListener('submit', onClickGetBtn)
 
-const autorData = {}
+refs.patchForm.addEventListener('input', onInputChangesPatch)
+refs.patchForm.addEventListener('submit', onClickPatchBtn)
 
 function onClickSendBtn(event) {
     event.preventDefault();
 
+    const autorData = {}
     let skills = []    
     const formData = new FormData(event.currentTarget)
 
@@ -62,6 +66,54 @@ function onClickSendBtn(event) {
 
     event.target.reset()
     refs.sendBtn.setAttribute('disabled', true)
+}
+
+function onClickGetBtn(event) {
+    event.preventDefault()
+
+    let value
+    const formData = new FormData(event.currentTarget)
+    formData.forEach(item => {
+        if (item) {
+            value = item
+        }
+    })
+
+    //data for GET method
+    console.log(value)
+
+    GETAutor(value)
+
+    event.target.reset()
+    // refs.inputAutor.forEach(input => input.removeAttribute('disabled'))
+    refs.getBtn.setAttribute('disabled', true)
+}
+
+function onClickPatchBtn(event) {
+    event.preventDefault()
+
+    let valueForPatch = {}
+    let skills = [] 
+    const formData = new FormData(event.currentTarget)
+
+    formData.forEach((value, name) => {
+        if (value) {
+            valueForPatch[name] = value.trim()
+        }
+        
+        if (name === 'skills') {
+            skills = [...skills, value]
+            valueForPatch[name] = skills
+        }   
+    })
+
+    // data for PATCH
+    console.log(valueForPatch)
+
+    PATCHAutor(valueForPatch)
+    
+    event.target.reset()
+    refs.patchBtn.setAttribute('disabled', true)
 }
 
 function onInputChanges(event) {
@@ -101,6 +153,22 @@ function onInputChangesGet(event) {
         }
     })
     
+}
+
+function onInputChangesPatch(event){
+    let length = null
+    const formData = new FormData(event.currentTarget)
+
+    formData.forEach((value, name) => {
+        if (value !== '') {
+            length += 1
+        }
+    })
+
+    if (length === 2) {
+        refs.patchBtn.removeAttribute('disabled')
+    }
+
 }
 
 function fetchWriters(value, options) {
@@ -168,7 +236,7 @@ function markupCardOfWriter(autor) {
                 <li><span>Number:</span>${number}</li>
                 <li><span>Skills:</span>${skills.join(', ')}</li>
             </ul>`
-    }    
+    }
 }
 
 function POSTAutor(autorData) {
@@ -183,27 +251,6 @@ function POSTAutor(autorData) {
     return fetchWriters("", options)
 }
 
-function onClickGetBtn(event) {
-    event.preventDefault()
-
-    let value
-    const formData = new FormData(event.currentTarget)
-    formData.forEach(item => {
-        if (item) {
-            value = item
-        }
-    })
-
-    //data for GET method
-    console.log(value)
-    
-    GETAutor(value)
-
-    event.target.reset()
-    // refs.inputAutor.forEach(input => input.removeAttribute('disabled'))
-    refs.getBtn.setAttribute('disabled', true)
-}
-
 function GETAutor(value) {
     console.log(value)
 
@@ -213,4 +260,20 @@ function GETAutor(value) {
             const markup = markupCardOfWriter(value)
             refs.resultGetAutor.insertAdjacentHTML('beforeend', markup)
         })
+}
+
+function PATCHAutor(valueForPatch) {
+    const options = {
+        method: "PATCH",
+        body: JSON.stringify(valueForPatch),
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+        },
+    }
+
+    fetchWriters(valueForPatch.id, options)
+        .then((promice) => {
+                refs.autorBase.innerHTML = ''
+                drawDb()
+            })
 }

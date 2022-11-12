@@ -72,9 +72,37 @@
             </label> -->            
         </form>
 
-        <!-- <div class="result">
-            <p>result</p>
-        </div> -->
+        <form class="patch-autor">
+            <p>PATCH</p>
+            <label>
+                <span>ID:</span>
+                <input name="id" type="number" required>
+            </label>
+            <label>
+                <span>Name:</span>
+                <input name="name" type="text">
+            </label>
+            <label>
+                <span>Surname:</span>
+                <input name="surname" type="text">
+            </label>
+            <label>
+                <span>Email:</span>
+                <input name="email" type="email">
+            </label>
+            <label>
+                <span>Number:</span>
+                <input name="number" type="number">
+            </label>
+            <label>
+                <span>Skills:</span>
+                <input name="skills" type="checkbox" value="HTML">HTML
+                <input name="skills" type="checkbox" value="CSS">CSS
+                <input name="skills" type="checkbox" value="JS">JS
+                <input name="skills" type="checkbox" value="React">React
+            </label>
+            <button type="submit" disabled>PATCH AUTOR</button>
+        </form>
     </div>
     
     <h1>Full database</h1>
@@ -86,16 +114,7 @@
         <button class="surname-to-z" type="button">by surname from a to z</button>
     </div>
 
-    <div class="autor-base">               
-        <!-- <ul class="autor">
-            <li><span>Id:</span></li>
-            <li><span>Name:</span></li>
-            <li><span>Surname:</span></li>
-            <li><span>Email:</span></li>
-            <li><span>Number:</span></li>
-            <li><span>Skills:</span></li>
-        </ul> -->
-    </div>
+    <div class="autor-base"></div>
 
     <style>
         body {
@@ -116,7 +135,8 @@
         }
 
         .autor-form,
-        .get-autor{
+        .get-autor,
+        .patch-autor{
             display: flex;
             flex-direction: column;
             margin: 0 auto;
@@ -152,7 +172,8 @@
 
         .autor-form p,
         .get-autor p,
-        .result p {
+        .result p,
+        .patch-autor p {
             display: flex;
             width: 60px;
             justify-content: center;
@@ -172,7 +193,8 @@
         .autor span,
         .autor-form p,
         .get-autor p,
-        .result p {
+        .result p,
+        .patch-autor p {
             margin-right: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -183,7 +205,8 @@
         }
 
         .autor-form button,
-        .get-autor button {
+        .get-autor button,
+        .patch-autor button {
             display: block;
             margin: 0 auto;
             background-color: rgb(92, 148, 148);
