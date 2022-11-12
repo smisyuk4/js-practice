@@ -3,11 +3,11 @@
 // npm install -g json-server
 
 //        запуск сервера
-// npm run server (потому что сделал скрипт запуска сервера)
+// npm run server - потому что сделал скрипт запуска сервера
 //        или базовая команда от пакета
-// json-server --watch db.json --port 3004
+// json-server --watch db.json --port 1986
 
-//  http://localhost:3000/posts/1,
+//  http://localhost:1986/posts/1,
 
 // class formData
 //https://www.youtube.com/watch?v=iJq-NwbZL84
@@ -74,7 +74,7 @@ function onInputChanges(event) {
 }
 
 function fetchWriters(options) {
-    return fetch('http://localhost:3004/user', options)
+    return fetch('http://localhost:1986/user', options)
         .then(response => {
             if (!response.ok) {
                 throw new Error(response.status);

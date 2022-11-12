@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build src/*.html --public-url /js-practice/",
-    "server": "json-server --watch db.json"
+    "server": "json-server --watch db.json --port 1986"
   },
   "dependencies": {
     "basiclightbox": "^5.0.4",
