@@ -18,17 +18,17 @@
 // DELETE
 
 const refs = {
-    userForm: document.querySelector('.user-form'),
-    sendBtn: document.querySelector('.user-form button'),
+    autorForm: document.querySelector('.autor-form'),
+    sendBtn: document.querySelector('.autor-form button'),
     sortBtns: document.querySelector('.sort-buttons'),
-    userBase: document.querySelector('.user-base'),
+    autorBase: document.querySelector('.autor-base'),
 }
 
-refs.userForm.addEventListener('input', onInputChanges)
+refs.autorForm.addEventListener('input', onInputChanges)
 
-refs.userForm.addEventListener('submit', onClickSendBtn)
+refs.autorForm.addEventListener('submit', onClickSendBtn)
 
-const userData = {}
+const autorData = {}
 
 function onClickSendBtn(event) {
     event.preventDefault();
@@ -38,15 +38,22 @@ function onClickSendBtn(event) {
 
     formData.forEach((value, name) => {
         if (name !== 'skills') {
-            userData[name] = value
+            autorData[name] = value.trim()
         } else {
             skills = [...skills, value]
-            userData[name] = skills
+            autorData[name] = skills
         }        
     })
 
     //send userData to storage
-    console.log(userData)
+    console.log(autorData)
+
+    POSTAutor(autorData)
+        .then((promice) => {
+            refs.autorBase.innerHTML = ''
+            drawDb()
+        })
+
     event.target.reset()
     refs.sendBtn.setAttribute('disabled', true)
 }
@@ -86,12 +93,11 @@ function drawDb() {
 
             const markup = resultArr.map(autor => {
                 return markupCardOfWriter(autor)
-            })
+            }).join('')
 
-            refs.userBase.insertAdjacentHTML('beforeend', markup.join(''))
+            refs.autorBase.insertAdjacentHTML('beforeend', markup)
         })
         .catch(error => console.log(error))
-
 }
 
 drawDb()
@@ -100,7 +106,7 @@ function markupCardOfWriter(autor) {
     const {id, name, surname, email, number, skills} = autor
 
     if (!skills) {
-        return `<ul class="user">
+        return `<ul class="autor">
                 <li><span>Id:</span>${id}</li>
                 <li><span>Name:</span>${name}</li>
                 <li><span>Surname:</span>${surname}</li>
@@ -110,7 +116,7 @@ function markupCardOfWriter(autor) {
     }
 
     if (skills) {
-        return `<ul class="user">
+        return `<ul class="autor">
                 <li><span>Id:</span>${id}</li>
                 <li><span>Name:</span>${name}</li>
                 <li><span>Surname:</span>${surname}</li>
@@ -119,4 +125,16 @@ function markupCardOfWriter(autor) {
                 <li><span>Skills:</span>${skills.join(', ')}</li>
             </ul>`
     }    
+}
+
+function POSTAutor(autorData) {
+    const options = {
+        method: "POST",
+        body: JSON.stringify(autorData),
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+        },
+    }
+
+    return fetchWriters(options)
 }
