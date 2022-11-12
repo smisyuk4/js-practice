@@ -13,32 +13,71 @@
 <body>
     <a class="menu-link" href="../index.html" style="display: block; width: 50px; margin-bottom: 50px;">BACK</a>
 
-    <form class="autor-form">
-        <label>
-            <span>Name:</span>
-            <input name="name" type="text" required>
-        </label>
-        <label>
-            <span>Surname:</span>
-            <input name="surname" type="text" required>
-        </label>
-        <label>
-            <span>Email:</span>
-            <input name="email" type="email" required>
-        </label>
-        <label>
-            <span>Number:</span>
-            <input name="number" type="number" required>
-        </label>
-        <label>
-            <span>Skills:</span>
-            <input name="skills" type="checkbox" value="HTML">HTML
-            <input name="skills" type="checkbox" value="CSS">CSS
-            <input name="skills" type="checkbox" value="JS">JS
-            <input name="skills" type="checkbox" value="React">React
-        </label>
-        <button type="submit" disabled>SEND FORM</button> 
-    </form>
+    <div class="forms">
+        <form class="autor-form">
+            <p>POST</p>
+            <label>
+                <span>Name:</span>
+                <input name="name" type="text" required>
+            </label>
+            <label>
+                <span>Surname:</span>
+                <input name="surname" type="text" required>
+            </label>
+            <label>
+                <span>Email:</span>
+                <input name="email" type="email" required>
+            </label>
+            <label>
+                <span>Number:</span>
+                <input name="number" type="number" required>
+            </label>
+            <label>
+                <span>Skills:</span>
+                <input name="skills" type="checkbox" value="HTML">HTML
+                <input name="skills" type="checkbox" value="CSS">CSS
+                <input name="skills" type="checkbox" value="JS">JS
+                <input name="skills" type="checkbox" value="React">React
+            </label>
+            <button type="submit" disabled>POST AUTOR</button>
+        </form>
+        
+        <form class="get-autor">
+            <p>GET</p>
+            <label>
+                <span>Id:</span>
+                <input name="id" type="number">
+            </label>
+
+            <button type="submit" disabled>GET AUTOR</button>
+
+            <div class="result">
+                <p>result</p>
+            </div>
+            <!-- <label>
+                <span>Name:</span>
+                <input name="name" type="text">
+            </label>
+            <label>
+                <span>Surname:</span>
+                <input name="surname" type="text">
+            </label>
+            <label>
+                <span>Email:</span>
+                <input name="email" type="email">
+            </label>
+            <label>
+                <span>Number:</span>
+                <input name="number" type="number">
+            </label> -->            
+        </form>
+
+        <!-- <div class="result">
+            <p>result</p>
+        </div> -->
+    </div>
+    
+    <h1>Full database</h1>
 
     <div class="sort-buttons">
         <button class="id-to-high check" type="button">by Id from low to high</button>
@@ -47,7 +86,7 @@
         <button class="surname-to-z" type="button">by surname from a to z</button>
     </div>
 
-    <div class="autor-base">        
+    <div class="autor-base">               
         <!-- <ul class="autor">
             <li><span>Id:</span></li>
             <li><span>Name:</span></li>
@@ -64,7 +103,20 @@
             background-color: rgb(195, 202, 195);
         }
 
-        .autor-form{
+        .forms {
+            display: flex;
+            gap: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .autor-form,
+        .get-autor{
             display: flex;
             flex-direction: column;
             margin: 0 auto;
@@ -76,6 +128,40 @@
             background-color: aquamarine;
         }
 
+        .result {
+            flex-grow: 1;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 20px;
+            background-color: aquamarine;
+        }
+
+        .result .autor {
+            animation: move-color 2s linear alternate infinite;
+        }
+
+        @keyframes move-color {
+            0%{
+                background-color: aquamarine;
+            }
+
+            100%{
+                background-color: rgb(2, 247, 165);
+            }
+        }
+
+        .autor-form p,
+        .get-autor p,
+        .result p {
+            display: flex;
+            width: 60px;
+            justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: rgb(175, 79, 79);
+            padding: 5px 10px;
+        }
+
         label{
             display: flex;
             align-items: center;
@@ -83,7 +169,10 @@
         }
 
         label span,
-        .autor span {
+        .autor span,
+        .autor-form p,
+        .get-autor p,
+        .result p {
             margin-right: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -93,11 +182,16 @@
             width: 100%;
         }
 
-        .autor-form button {
+        .autor-form button,
+        .get-autor button {
             display: block;
             margin: 0 auto;
             background-color: rgb(92, 148, 148);
             border-radius: 5px;            
+        }
+
+        .get-autor button {
+            margin-bottom: 10px;
         }
 
         .sort-buttons {

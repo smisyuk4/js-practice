@@ -12,7 +12,7 @@
 // class formData
 //https://www.youtube.com/watch?v=iJq-NwbZL84
 
-// POST
+// POST + 
 // GET
 // PUT и PATCH
 // DELETE
@@ -20,13 +20,19 @@
 const refs = {
     autorForm: document.querySelector('.autor-form'),
     sendBtn: document.querySelector('.autor-form button'),
-    sortBtns: document.querySelector('.sort-buttons'),
     autorBase: document.querySelector('.autor-base'),
+    getAutor: document.querySelector('.get-autor'),
+    inputAutor: document.querySelectorAll('.get-autor input'),
+    resultGetAutor: document.querySelector('.result'),
+    getBtn: document.querySelector('.get-autor button'),
+    sortBtns: document.querySelector('.sort-buttons'),
 }
 
 refs.autorForm.addEventListener('input', onInputChanges)
-
 refs.autorForm.addEventListener('submit', onClickSendBtn)
+
+refs.getAutor.addEventListener('input', onInputChangesGet)
+refs.getAutor.addEventListener('submit', onClickGetBtn)
 
 const autorData = {}
 
@@ -73,8 +79,42 @@ function onInputChanges(event) {
     }
 }
 
-function fetchWriters(options) {
-    return fetch('http://localhost:1986/user', options)
+function onInputChangesGet(event) {
+    let length = null
+    const formData = new FormData(event.currentTarget)
+
+    formData.forEach((value, name) => {
+        if (value !== '') {
+            length += 1
+            console.log(name)
+        }
+    })
+
+    if (length === 1) {
+        refs.getBtn.removeAttribute('disabled')
+    }
+
+    //close inputs for change
+    refs.inputAutor.forEach(input => {
+        if (!input.value) {
+            input.setAttribute('disabled', true)
+        }
+    })
+    
+}
+
+function fetchWriters(value, options) {
+    const BASE_URL = 'http://localhost:1986/autor/'
+    let url
+    if (value) {
+        url = BASE_URL + value
+    }
+
+    if (!value) {
+        url = BASE_URL
+    }    
+
+    return fetch(url, options)
         .then(response => {
             if (!response.ok) {
                 throw new Error(response.status);
@@ -140,5 +180,37 @@ function POSTAutor(autorData) {
         },
     }
 
-    return fetchWriters(options)
+    return fetchWriters("", options)
+}
+
+function onClickGetBtn(event) {
+    event.preventDefault()
+
+    let value
+    const formData = new FormData(event.currentTarget)
+    formData.forEach(item => {
+        if (item) {
+            value = item
+        }
+    })
+
+    //data for GET method
+    console.log(value)
+    
+    GETAutor(value)
+
+    event.target.reset()
+    // refs.inputAutor.forEach(input => input.removeAttribute('disabled'))
+    refs.getBtn.setAttribute('disabled', true)
+}
+
+function GETAutor(value) {
+    console.log(value)
+
+    fetchWriters(value, {})
+        .then((value) => {
+            refs.resultGetAutor.innerHTML = '<p>result</p>'
+            const markup = markupCardOfWriter(value)
+            refs.resultGetAutor.insertAdjacentHTML('beforeend', markup)
+        })
 }
