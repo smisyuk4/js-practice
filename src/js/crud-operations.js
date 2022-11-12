@@ -66,14 +66,57 @@ function onInputChanges(event) {
     }
 }
 
-function fetch(options) {
-    return fetch('link', options)
+function fetchWriters(options) {
+    return fetch('http://localhost:3004/user', options)
         .then(response => {
             if (!response.ok) {
                 throw new Error(response.status);
             }
             return response.json()
         })
-        .then(data => console.log(data))
+}
+
+function drawDb() {
+    fetchWriters()
+        .then(response => {
+            return response;
+        })
+        .then(resultArr => {
+            console.log(resultArr)
+
+            const markup = resultArr.map(autor => {
+                return markupCardOfWriter(autor)
+            })
+
+            refs.userBase.insertAdjacentHTML('beforeend', markup.join(''))
+        })
         .catch(error => console.log(error))
+
+}
+
+drawDb()
+
+function markupCardOfWriter(autor) {
+    const {id, name, surname, email, number, skills} = autor
+
+    if (!skills) {
+        return `<ul class="user">
+                <li><span>Id:</span>${id}</li>
+                <li><span>Name:</span>${name}</li>
+                <li><span>Surname:</span>${surname}</li>
+                <li><span>Email:</span>${email}</li>
+                <li><span>Number:</span>${number}</li>
+            </ul>`
+    }
+
+    if (skills) {
+        return `<ul class="user">
+                <li><span>Id:</span>${id}</li>
+                <li><span>Name:</span>${name}</li>
+                <li><span>Surname:</span>${surname}</li>
+                <li><span>Email:</span>${email}</li>
+                <li><span>Number:</span>${number}</li>
+                <li><span>Skills:</span>${skills.join(', ')}</li>
+            </ul>`
+    }    
 }

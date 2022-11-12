@@ -1,9 +1,62 @@
 {
-    "posts": [
-        { "id": 1, "title": "json-server", "author": "typicode" }
+    "user": [
+        {   
+            "id": 1, 
+            "name": "Іван Олександрович", 
+            "surname": "Аксьонов",
+            "email": "aks@gmail.com",
+            "number": "050-48-38-779",
+            "skills": ["HTML", "CSS"]   
+        },
+        {   
+            "id": 2, 
+            "name": "Микола Тадіонович", 
+            "surname": "Барась",
+            "email": "bars@gmail.com",
+            "number": "050-48-38-779",
+            "skills": ["HTML", "CSS"]   
+        },
+        {   
+            "id": 3, 
+            "name": "Іван Захарович", 
+            "surname": "Бойко",
+            "email": "boikoIZ@gmail.com",
+            "number": "050-48-38-779",
+            "skills": ["HTML", "CSS", "JS"]   
+        },
+        {   
+            "id": 4, 
+            "name": "Білак", 
+            "surname": "Ізидор",
+            "email": "izi@gmail.com",
+            "number": "050-48-38-779"   
+        },
+        {   
+            "id": 5, 
+            "name": "Віктор Семенович", 
+            "surname": "Близнець",
+            "email": "bliznec@gmail.com",
+            "number": "050-48-38-779",
+            "skills": ["HTML", "CSS", "JS", "React"]   
+        },
+        {   
+            "id": 6, 
+            "name": "Степан Васильович", 
+            "surname": "Васильченко",
+            "email": "vasvas@gmail.com",
+            "number": "050-48-38-779",
+            "skills": ["HTML", "CSS", "JS", "React"]   
+        },
+        {   
+            "id": 7, 
+            "name": "Дарина", 
+            "surname": "Гнатко",
+            "email": "gnatko-darina@gmail.com",
+            "number": "050-48-38-779",
+            "skills": ["HTML", "CSS", "JS", "React"]   
+        }
     ],
     "comments": [
         { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+    ]
 }
