@@ -234,6 +234,17 @@
         "React"
       ],
       "id": 23
+    },
+    {
+      "name": "Іван Сидорович",
+      "surname": "Їжакевич",
+      "email": "izak@gmail.com",
+      "number": "45645645645",
+      "skills": [
+        "HTML",
+        "CSS"
+      ],
+      "id": 24
     }
   ],
   "comments": [

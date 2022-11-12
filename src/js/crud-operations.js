@@ -97,7 +97,11 @@ function drawDb() {
 
             refs.autorBase.insertAdjacentHTML('beforeend', markup)
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error)
+            const markup = "<p class='error'>Sorry! Connection with database is failed 👀</p>"
+            refs.autorBase.insertAdjacentHTML('beforeend', markup)
+        })
 }
 
 drawDb()

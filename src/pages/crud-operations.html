@@ -118,6 +118,27 @@
             gap: 20px;
         }
 
+        .error {
+            margin: 0 auto;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: rgb(255, 127, 206);
+            animation: shake 2s linear alternate infinite;
+        }
+
+        @keyframes shake {
+            from{
+                transform: translateX(100px);
+                background-color: rgb(216, 30, 145);
+                color: rgb(255, 255, 255);
+            }
+            to{
+                transform: translateX(-100px);
+                background-color: rgb(255, 203, 235);
+            }
+        }
+
         .autor {
             margin: 0;
             padding: 10px;
