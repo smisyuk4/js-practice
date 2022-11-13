@@ -43,33 +43,21 @@
         </form>
         
         <form class="get-autor">
-            <p>GET</p>
+            <div class="title-get-autor">
+                <p>GET</p>
+                <p>DELETE</p>
+            </div>
             <label>
                 <span>Id:</span>
                 <input name="id" type="number">
             </label>
 
-            <button type="submit" disabled>GET AUTOR</button>
+            <button type="submit" id="get-btn" disabled>GET AUTOR</button>
+            <button type="button" id="del-btn" disabled>DELETE AUTOR</button>
 
             <div class="result">
                 <p>result</p>
-            </div>
-            <!-- <label>
-                <span>Name:</span>
-                <input name="name" type="text">
-            </label>
-            <label>
-                <span>Surname:</span>
-                <input name="surname" type="text">
-            </label>
-            <label>
-                <span>Email:</span>
-                <input name="email" type="email">
-            </label>
-            <label>
-                <span>Number:</span>
-                <input name="number" type="number">
-            </label> -->            
+            </div>          
         </form>
 
         <form class="patch-autor">
@@ -137,20 +125,18 @@
         .autor-form,
         .get-autor,
         .patch-autor{
-            display: flex;
-            flex-direction: column;
             margin: 0 auto;
             margin-bottom: 20px;
-            width: 350px;
             padding: 10px;
+            text-align: center;
             border: 2px solid black;
             border-radius: 20px;
             background-color: aquamarine;
         }
 
         .result {
-            flex-grow: 1;
             padding: 10px;
+            text-align: left;
             border: 2px solid black;
             border-radius: 20px;
             background-color: aquamarine;
@@ -174,13 +160,18 @@
         .get-autor p,
         .result p,
         .patch-autor p {
-            display: flex;
-            width: 60px;
-            justify-content: center;
+            display: inline-block;
             margin-bottom: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
             border-radius: 5px;
             background-color: rgb(175, 79, 79);
             padding: 5px 10px;
+        }
+
+        .title-get-autor{
+            display: flex;
+            justify-content: space-between;
         }
 
         label{
@@ -190,11 +181,7 @@
         }
 
         label span,
-        .autor span,
-        .autor-form p,
-        .get-autor p,
-        .result p,
-        .patch-autor p {
+        .autor span {
             margin-right: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -207,8 +194,7 @@
         .autor-form button,
         .get-autor button,
         .patch-autor button {
-            display: block;
-            margin: 0 auto;
+            display: inline-block;            
             background-color: rgb(92, 148, 148);
             border-radius: 5px;            
         }
@@ -216,6 +202,14 @@
         .get-autor button {
             margin-bottom: 10px;
         }
+
+        #get-btn:hover{
+            background-color: green;            
+        } 
+
+        #del-btn:hover{
+            background-color: red;            
+        } 
 
         .sort-buttons {
             display: flex;
@@ -266,8 +260,8 @@
         }
 
         button {
-            padding: 3px;
-            width: 170px;
+            padding: 10px;
+            font-weight: 700;
             background-color: transparent;
             border: none;            
             cursor: pointer;

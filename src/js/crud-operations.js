@@ -13,8 +13,8 @@
 //https://www.youtube.com/watch?v=iJq-NwbZL84
 
 // POST + 
-// GET
-// PUT и PATCH
+// GET + 
+// PUT и PATCH + 
 // DELETE
 
 const refs = {
@@ -26,7 +26,8 @@ const refs = {
     resultGetAutor: document.querySelector('.result'),
     patchForm: document.querySelector('.patch-autor'),
     patchBtn: document.querySelector('.patch-autor button'),
-    getBtn: document.querySelector('.get-autor button'),
+    getBtn: document.querySelector('#get-btn'),
+    delBtn: document.querySelector('#del-btn'),
     sortBtns: document.querySelector('.sort-buttons'),
 }
 
@@ -35,6 +36,9 @@ refs.autorForm.addEventListener('submit', onClickSendBtn)
 
 refs.getAutor.addEventListener('input', onInputChangesGet)
 refs.getAutor.addEventListener('submit', onClickGetBtn)
+// refs.getAutor.addEventListener('click', onClickDelBtn)
+
+// убрать класс форма и сделать через клик на кнопку
 
 refs.patchForm.addEventListener('input', onInputChangesPatch)
 refs.patchForm.addEventListener('submit', onClickPatchBtn)
@@ -85,8 +89,29 @@ function onClickGetBtn(event) {
     GETAutor(value)
 
     event.target.reset()
-    // refs.inputAutor.forEach(input => input.removeAttribute('disabled'))
     refs.getBtn.setAttribute('disabled', true)
+    refs.delBtn.setAttribute('disabled', true)
+}
+
+function onClickDelBtn(event) {
+    event.preventDefault()
+    console.log(event.target)
+
+    let value
+    const formData = new FormData(event.currentTarget)
+    formData.forEach(item => {
+        if (item) {
+            value = item
+        }
+    })
+
+    //data for DELETE method
+    console.log(value)
+
+
+    // event.target.reset()
+    // refs.getBtn.setAttribute('disabled', true)
+    // refs.delBtn.setAttribute('disabled', true)
 }
 
 function onClickPatchBtn(event) {
@@ -144,15 +169,8 @@ function onInputChangesGet(event) {
 
     if (length === 1) {
         refs.getBtn.removeAttribute('disabled')
+        refs.delBtn.removeAttribute('disabled')
     }
-
-    //close inputs for change
-    refs.inputAutor.forEach(input => {
-        if (!input.value) {
-            input.setAttribute('disabled', true)
-        }
-    })
-    
 }
 
 function onInputChangesPatch(event){
